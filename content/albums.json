@@ -1,0 +1,34 @@
+{
+  "llm": {
+    "folder": "projects/llm",
+    "title": "LLM Serving Platform"
+  },
+  "kubernetes": {
+    "folder": "projects/kubernetes",
+    "title": "Kubernetes Platform"
+  },
+  "vision": {
+    "folder": "projects/vision",
+    "title": "Vegetable Image Classification"
+  },
+  "crop": {
+    "folder": "projects/crop",
+    "title": "Crop Recommendation System"
+  },
+  "technova": {
+    "folder": "hackathons/technova",
+    "title": "Technova 1.0"
+  },
+  "fit-tech": {
+    "folder": "hackathons/fit-tech",
+    "title": "Fit-Tech 1.0"
+  },
+  "masterfaster": {
+    "folder": "hackathons/masterfaster",
+    "title": "MasterFaster 2.0"
+  },
+  "cpc": {
+    "folder": "community/cpc",
+    "title": "CPC FSS — mentoring and leadership"
+  }
+}

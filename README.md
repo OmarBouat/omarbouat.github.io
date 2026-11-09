@@ -1,10 +1,10 @@
 # Omar Bouattour — Portfolio
 
-A responsive professional portfolio adapted from [AnilSeervi/DevFolio](https://github.com/AnilSeervi/DevFolio), using the experience, education, skills, and projects in Omar's supplied CV. The original MIT license is retained in `LICENSE`.
+A personal, responsive portfolio built from Omar's CV, with a light-first design, dark mode, and a portrait-led introduction. The visual direction follows the supplied [Mohamed Yassine Abid](https://mohamedyassineabid.github.io/) and [Emna Mnejja](https://mnejja-emna.github.io/) references.
 
 ## Run locally
 
-Requires Node.js 20 or newer. The website has no runtime dependencies. Install the test-only dependency to run automated checks. LinkeDOM checks DOM behavior; it does not replace visual browser verification.
+Requires Node.js 20 or newer. The website has no runtime dependencies. LinkeDOM is used only for automated DOM checks.
 
 ```bash
 npm ci
@@ -14,29 +14,38 @@ npm run dev
 Open http://127.0.0.1:3000. Set `PORT` to change the port.
 
 ```bash
-npm test       # Check page links, CV, interactive wiring, and HTTP responses
-npm run build  # Produce the deployable static site in dist/
+npm test       # Nine checks for interactions, media discovery, assets, and HTTP delivery
+npm run build  # Produce the static site and photo manifest in dist/
 ```
+
+## Photos
+
+See [PHOTOS.md](PHOTOS.md). Put images in the relevant project or event folder under `public/images/`. They are discovered automatically and become card covers and multi-image galleries. Add optional `captions.json` files for captions and accessible descriptions.
+
+The current portrait comes from Omar's public GitHub profile, linked in the supplied CV. Place `portrait.jpg`, `portrait.png`, or `portrait.webp` in `public/images/profile/` to replace it.
+
+The development server refreshes the photo manifest on page reload. Build and redeploy after changing photos on the hosted site.
 
 ## Structure
 
-- `src/index.html`: portfolio sections and CV-based content.
-- `src/css/template.css`: imported DevFolio base styles.
-- `src/css/portfolio.css`: typography, theme, layouts, and responsive overrides.
-- `src/main.js`: project filters, details dialogs, mobile navigation, and copy-email.
-- `public/`: original downloadable CV, favicon, sharing artwork, self-hosted fonts.
-- `scripts/`: dependency-free development server and static build.
-- `tests/`: Node test runner checks.
-- `.openai/hosting.json`: Sites identity and static output directory.
+- `src/index.html`: hero, about, projects, experience, hackathons, education, and contact.
+- `src/css/portfolio.css`: responsive layout and light/dark theme variables.
+- `src/theme.js`: applies a saved theme before the first paint.
+- `src/main.js`: filters, theme toggle, menu, project/event details, photo galleries, clipboard.
+- `content/albums.json`: album IDs and photo folders.
+- `public/`: CV, portrait, photo albums, self-hosted fonts, favicon, and sharing artwork.
+- `scripts/media.mjs`: image discovery, sorting, captions, and manifest generation.
+- `scripts/`: local server and static build.
+- `tests/`: Node test runner and LinkeDOM checks.
+- `.openai/hosting.json`: existing Site identity and static output directory.
+- `vendor/devfolio/`: retained stylesheet from the initial MIT-licensed template import.
 
-## Editing
+## Editing and validation
 
-Update project summaries in `src/index.html` and detailed descriptions in `src/main.js`. Replace `public/Omar_Bouattour.pdf` when the CV changes. Availability currently follows the supplied CV: a six-month internship starting February 2027.
+Update visible summaries in `src/index.html` and detailed descriptions in `src/main.js`. Update the CV in `public/Omar_Bouattour.pdf`. Availability follows the supplied CV: a six-month internship starting February 2027.
 
-The source link for the Kubernetes project was verified against Omar's public GitHub repository. Other projects have detailed summaries and a discussion link; add their repository URLs only when confirmed.
-
-Keep changes focused and run `npm test` and `npm run build` before deployment. Browser checks should cover mobile navigation, filters, project dialogs (including Escape and focus return), email copying, and the CV download.
+Run `npm test`, `npm run build`, and `git diff --check` before deployment. The test suite checks DOM behavior and server responses; browser verification is still needed for visual layout, native dialog behavior, and actual mobile rendering.
 
 ## Attribution
 
-DevFolio by Anil Seervi, MIT. Import details are in `TEMPLATE.md`. DM Sans and Space Grotesk are self-hosted under the SIL Open Font License; license files live alongside the fonts.
+The initial version imported [DevFolio](https://github.com/AnilSeervi/DevFolio) by Anil Seervi; its MIT license remains in `LICENSE`. The revised design and galleries are custom implementations inspired by the user-supplied references. DM Sans and Space Grotesk are self-hosted under the SIL Open Font License.

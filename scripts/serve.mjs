@@ -1,4 +1,5 @@
 import { createServer } from 'node:http';
+import { buildMedia } from './media.mjs';
 import { readFile, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -7,11 +8,17 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const source = path.join(root, 'src');
 const assets = path.join(root, 'public');
 const port = Number(process.env.PORT || 3000);
-const mime = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.svg':'image/svg+xml', '.woff2':'font/woff2', '.pdf':'application/pdf', '.txt':'text/plain; charset=utf-8' };
+const mime = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.svg':'image/svg+xml', '.woff2':'font/woff2', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.png':'image/png', '.webp':'image/webp', '.avif':'image/avif', '.json':'application/json', '.pdf':'application/pdf', '.txt':'text/plain; charset=utf-8' };
 
 export async function respond(req, res) {
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+    if (pathname === '/media.json') {
+      const body = JSON.stringify(await buildMedia(root));
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-cache' });
+      res.end(req.method === 'HEAD' ? undefined : body);
+      return;
+    }
     const relative = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
     let selected;
     for (const base of [source, assets]) {
