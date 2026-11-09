@@ -1,0 +1,19 @@
+{
+  "name": "omar-bouattour-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CV-based AI and data engineering portfolio, adapted from DevFolio.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.15"
+  }
+}

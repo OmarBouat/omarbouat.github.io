@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- Adapted from DevFolio by Anil Seervi. Original MIT license retained in LICENSE. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Omar Bouattour | AI & Data Engineering</title>
+  <meta name="description" content="Omar Bouattour, final-year data engineering student in Sfax, Tunisia. Building LLM serving platforms, AI infrastructure, and reliable data systems.">
+  <meta name="theme-color" content="#101b20">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Omar Bouattour | AI & Data Engineering">
+  <meta property="og:description" content="From models to infrastructure. Explore my work in LLM inference, Kubernetes, and data engineering.">
+  <meta property="og:url" content="https://omar-bouattour-portfolio.carvedvale2.chatgpt.site">
+  <meta property="og:image" content="https://omar-bouattour-portfolio.carvedvale2.chatgpt.site/social-card.svg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/template.css">
+  <link rel="stylesheet" href="/css/portfolio.css">
+  <script src="/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="container navigation" aria-label="Main navigation">
+    <a class="wordmark" href="#hero" aria-label="Omar Bouattour home"><span class="monogram">ob<span>.</span></span><span class="wordmark-name">OMAR BOUATTOUR</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="menu-icon" aria-hidden="true"></span><span class="sr-only">Toggle navigation</span></button>
+    <div class="nav-links" id="nav-links">
+      <a href="#projects">Work</a><a href="#experience">Experience</a><a href="#about">About</a>
+      <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+</header>
+<main id="main">
+  <section id="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="availability"><span class="status-dot" aria-hidden="true"></span>OPEN TO A 6-MONTH INTERNSHIP · FEB 2027</p>
+          <p class="eyebrow hero-intro">HELLO, I’M OMAR BOUATTOUR</p>
+          <h1 class="hero-title" id="hero-title">From models<br>to <span class="accent">infrastructure.</span></h1>
+          <p class="hero-description">I build the systems that bring AI to life.<br>Final-year data engineering student focused on LLM inference, GPU serving, and dependable data platforms.</p>
+          <div class="hero-cta">
+            <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="/Omar_Bouattour.pdf" download>Download CV <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+          </div>
+          <div class="hero-meta">
+            <span><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg> Sfax, Tunisia</span>
+            <a href="https://github.com/OmarBouat" target="_blank" rel="noopener noreferrer" aria-label="Omar Bouattour on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/bouattour-omar" target="_blank" rel="noopener noreferrer" aria-label="Omar Bouattour on LinkedIn">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="architecture" role="img" aria-label="Illustrative architecture of my LLM serving platform: AI applications connect through an API gateway to vLLM GPU inference, deployed with Kubernetes and monitored with Prometheus and Grafana.">
+          <div class="architecture-top"><span><span class="tiny-cross">+</span> SYSTEM ARCHITECTURE</span><span>01 / LLM SERVING</span></div>
+          <svg class="architecture-drawing" viewBox="0 0 560 420" aria-hidden="true">
+            <defs>
+              <linearGradient id="cube-top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#72e1c3"/><stop offset="1" stop-color="#2e877e"/></linearGradient>
+              <linearGradient id="cube-left" x2="1" y2="1"><stop stop-color="#21695e"/><stop offset="1" stop-color="#123d3b"/></linearGradient>
+              <linearGradient id="cube-right" x2="0" y2="1"><stop stop-color="#398c7a"/><stop offset="1" stop-color="#1e4e49"/></linearGradient>
+              <radialGradient id="glow"><stop stop-color="#70ddbd" stop-opacity=".12"/><stop offset="1" stop-color="#70ddbd" stop-opacity="0"/></radialGradient>
+            </defs>
+            <circle cx="280" cy="218" r="190" fill="url(#glow)"/>
+            <g fill="none" stroke="#294249" stroke-width="1">
+              <path d="M280 70 490 190 280 310 70 190Z"/><path d="M280 115 440 207 280 300 120 207Z"/>
+              <path d="m280 70 0 240m-210-120 420 0" stroke-dasharray="3 6"/>
+              <path d="m70 230 210 120 210-120M105 250l175 100 175-100" opacity=".6"/>
+            </g>
+            <g fill="none" stroke="#64d8b8" stroke-width="1.5">
+              <path class="diagram-path" d="M280 104v57M155 211h56M349 211h58M280 272v52" stroke-dasharray="4 5"/>
+            </g>
+            <g class="gpu-cube">
+              <path d="m280 145 76 44-76 44-76-44Z" fill="url(#cube-top)" stroke="#8ef3d1" stroke-width=".7"/>
+              <path d="m204 189 76 44v77l-76-44Z" fill="url(#cube-left)" stroke="#4eaf98" stroke-width=".7"/>
+              <path d="m280 233 76-44v77l-76 44Z" fill="url(#cube-right)" stroke="#4eaf98" stroke-width=".7"/>
+              <path d="m235 188 45-26 45 26-45 26Z" fill="none" stroke="#bdffe4" stroke-width="1.5"/>
+              <path d="m247 188 33-19 33 19-33 19Z" fill="#b8ffdc" opacity=".32"/>
+              <g stroke="#9bffe0" opacity=".6"><path d="m223 227 41 24m-41-13 41 24m-41-13 41 24"/><path d="m297 252 42-24m-42 35 42-24m-42 35 42-24"/></g>
+              <text x="280" y="191" text-anchor="middle" fill="#103a32" font-family="monospace" font-size="14" font-weight="bold">GPU</text>
+            </g>
+            <g class="diagram-node">
+              <rect x="202" y="49" width="156" height="57" rx="7"/><text x="280" y="73" text-anchor="middle" class="node-title">API GATEWAY</text><text x="280" y="92" text-anchor="middle" class="node-sub">LiteLLM · model routing</text>
+              <rect x="20" y="183" width="137" height="58" rx="7"/><text x="88" y="208" text-anchor="middle" class="node-title">AI APPLICATIONS</text><text x="88" y="227" text-anchor="middle" class="node-sub">Chat · agents · APIs</text>
+              <rect x="405" y="183" width="137" height="58" rx="7"/><text x="473" y="208" text-anchor="middle" class="node-title">OBSERVABILITY</text><text x="473" y="227" text-anchor="middle" class="node-sub">Prometheus · Grafana</text>
+              <rect x="202" y="326" width="156" height="57" rx="7"/><text x="280" y="350" text-anchor="middle" class="node-title">KUBERNETES</text><text x="280" y="369" text-anchor="middle" class="node-sub">Orchestration · serving</text>
+            </g>
+            <text x="280" y="133" text-anchor="middle" class="diagram-label">vLLM INFERENCE</text>
+            <g fill="#83e5c6"><circle cx="280" cy="113" r="3"/><circle cx="172" cy="211" r="3"/><circle cx="390" cy="211" r="3"/><circle cx="280" cy="317" r="3"/></g>
+          </svg>
+          <div class="architecture-bottom"><span><span class="status-dot" aria-hidden="true"></span> Qwen2.5-3B-Instruct</span><span>DEPLOY · SERVE · OBSERVE</span></div>
+        </div>
+      </div>
+      <div class="hero-bottom"><span>TURNING COMPLEXITY INTO WORKING SYSTEMS</span><a href="#projects">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a></div>
+    </div>
+  </section>
+  <div class="stack-strip" aria-label="Core technologies"><div class="container"><span class="stack-label">BUILT WITH</span><span>Python</span><span>vLLM</span><span>Kubernetes</span><span>PyTorch</span><span>Docker</span><span>Apache Spark</span></div></div>
+
+  <section id="projects" class="section-light" aria-labelledby="projects-title">
+    <div class="container project-wrapper">
+      <div class="section-heading"><div><p class="eyebrow"><span>01</span> SELECTED WORK</p><h2 class="section-title" id="projects-title">Built to solve.<br><span class="muted">Made to work.</span></h2></div><p class="section-intro">A selection of projects across AI infrastructure, cloud platforms, and applied machine learning.</p></div>
+      <div class="project-toolbar"><div class="project-filters" role="group" aria-label="Filter projects"><button type="button" class="filter-button active" data-filter="all" aria-pressed="true">All work <span>04</span></button><button type="button" class="filter-button" data-filter="infrastructure" aria-pressed="false">AI & Infrastructure</button><button type="button" class="filter-button" data-filter="ml" aria-pressed="false">Machine Learning</button></div><p class="project-count" role="status" aria-live="polite">04 PROJECTS</p></div>
+
+      <div class="projects-grid">
+        <article class="project-card featured" data-category="infrastructure">
+          <div class="project-visual serving-visual" aria-hidden="true">
+            <div class="visual-caption"><span>INFERENCE / PLATFORM</span><span>↗</span></div>
+            <div class="serving-art"><div class="service-chip"><span class="chip-dot"></span>AI CLIENTS<span class="art-line"></span></div><div class="service-chip gateway-chip">LiteLLM gateway<span class="art-line"></span></div><div class="model-chip"><span class="mini-grid">▦</span><div>vLLM<span>Qwen2.5 · GPU serving</span></div><span class="chip-dot"></span></div><div class="art-bottom"><span>LangChain</span><span>Kubernetes</span><span>Grafana</span></div></div>
+            <span class="visual-index">01</span>
+          </div>
+          <div class="project-body"><div class="project-category">AI INFRASTRUCTURE <span>APR — MAY 2026</span></div><h3 class="project-wrapper__text-title">LLM Serving Platform</h3><p>A shared GPU inference backend, connected to chat, agents, and an API gateway—with observability built in.</p><div class="tags"><span>vLLM</span><span>LiteLLM</span><span>Kubernetes</span><span>Grafana</span></div><button class="project-link" type="button" data-project="llm">Explore project <span aria-hidden="true">↗</span></button></div>
+        </article>
+        <article class="project-card" data-category="infrastructure">
+          <div class="project-visual kubernetes-visual" aria-hidden="true">
+            <div class="visual-caption"><span>INFRASTRUCTURE / AS CODE</span><span>↗</span></div>
+            <div class="cluster-art"><div class="cluster-head"><span>⎈</span> KUBERNETES</div><div class="cluster-connector"></div><div class="cluster-nodes"><span><i></i>CONTROL PLANE</span><span><i></i>WORKER 01</span><span><i></i>WORKER 02</span></div><div class="pipeline"><span>Gitea</span><b>→</b><span>Build</span><b>→</b><span>Nexus</span><b>→</b><span>Deploy</span></div></div>
+            <span class="visual-index">02</span>
+          </div>
+          <div class="project-body"><div class="project-category">CLOUD & DEVOPS <span>END-TO-END CI/CD</span></div><h3 class="project-wrapper__text-title">Kubernetes Platform</h3><p>Reproducible infrastructure and automated application delivery, from a code commit to a cluster rollout.</p><div class="tags"><span>Ansible</span><span>Vagrant</span><span>containerd</span><span>CI/CD</span></div><button class="project-link" type="button" data-project="kubernetes">Explore project <span aria-hidden="true">↗</span></button></div>
+        </article>
+        <article class="project-card" data-category="ml">
+          <div class="project-visual vision-visual" aria-hidden="true"><div class="visual-caption"><span>COMPUTER VISION / CLASSIFICATION</span><span>↗</span></div><div class="vision-art"><div class="scan-frame"><svg viewBox="0 0 100 100" class="leaf-art"><path d="M29 73C11 30 46 11 83 15c2 36-16 69-54 58Z" fill="#8cc6a0"/><path d="M21 85 67 34M42 62l-4-21m4 21 23-2" fill="none" stroke="#204f3e" stroke-width="3" stroke-linecap="round"/></svg><span class="scan-corner corner-a"></span><span class="scan-corner corner-b"></span></div><div class="vision-score">97<span>%</span><small>CLASSIFICATION ACCURACY</small></div></div><span class="visual-index">03</span></div>
+          <div class="project-body"><div class="project-category">DEEP LEARNING <span>36 CATEGORIES</span></div><h3 class="project-wrapper__text-title">Vegetable Image Classification</h3><p>Comparing transfer learning and a custom CNN to recognize 36 fruit and vegetable categories.</p><div class="tags"><span>TensorFlow</span><span>Keras</span><span>MobileNetV2</span></div><button class="project-link" type="button" data-project="vision">Explore project <span aria-hidden="true">↗</span></button></div>
+        </article>
+        <article class="project-card" data-category="ml">
+          <div class="project-visual crop-visual" aria-hidden="true"><div class="visual-caption"><span>APPLIED ML / AGRICULTURE</span><span>↗</span></div><div class="crop-art"><div class="crop-features"><span><i>01</i> Soil nutrients</span><span><i>02</i> Climate conditions</span><span><i>03</i> Model comparison</span></div><span class="crop-arrow">→</span><div class="crop-output"><svg viewBox="0 0 60 60"><path d="M30 48V22m0 16C9 37 8 19 8 19s22-2 22 19Zm0-8c0-20 22-20 22-20S52 30 30 30Z" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>CROP<br>RECOMMENDATION</span></div></div><span class="visual-index">04</span></div>
+          <div class="project-body"><div class="project-category">MACHINE LEARNING <span>DATA TO DECISIONS</span></div><h3 class="project-wrapper__text-title">Crop Recommendation System</h3><p>Turning soil and climate features into crop recommendations through a complete ML pipeline and Flask app.</p><div class="tags"><span>Python</span><span>Scikit-learn</span><span>Flask</span></div><button class="project-link" type="button" data-project="crop">Explore project <span aria-hidden="true">↗</span></button></div>
+        </article>
+      </div>
+      <a class="github-more" href="https://github.com/OmarBouat" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg> More experiments live on GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="experience-title">
+    <div class="container experience-layout">
+      <div class="experience-intro"><p class="eyebrow"><span>02</span> THE JOURNEY</p><h2 class="section-title" id="experience-title">Learning by<br><span class="accent">building.</span></h2><p>From full-stack applications to GPU-backed inference. Each experience has brought me closer to the systems behind AI.</p><a class="text-link" href="/Omar_Bouattour.pdf" download>View my full CV <span aria-hidden="true">↗</span></a></div>
+      <div class="timeline">
+        <article class="timeline-item"><div class="timeline-date"><span>JUN — AUG 2026</span><span class="timeline-tag">AI / LLM</span></div><h3>AI / LLM Infrastructure Intern</h3><p class="company">Data Engineering & Semantics Unit · FSS</p><ul><li>Deployed GPU-based inference services with vLLM and Kubernetes, exposing OpenAI-compatible APIs.</li><li>Evaluated Qwen and GPT models, parallelism strategies, prefix caching, and Multi-LoRA serving.</li><li>Measured TTFT, TPOT, throughput, and KV-cache usage with Prometheus and Grafana.</li></ul></article>
+        <article class="timeline-item"><div class="timeline-date"><span>JUN — AUG 2025</span><span class="timeline-tag">DATA</span></div><h3>Data Engineering Intern</h3><p class="company">Data Engineering & Semantics Unit · FSS</p><ul><li>Built an IoT platform for real-time device telemetry using Python, MQTT, Redis, and Apache IoTDB.</li><li>Deployed data infrastructure with PostgreSQL, Docker, and Kubernetes.</li></ul></article>
+        <article class="timeline-item"><div class="timeline-date"><span>JUL — AUG 2024</span><span class="timeline-tag">FULL STACK</span></div><h3>Software Development Intern</h3><p class="company">ArtiDev</p><ul><li>Developed web applications with ReactJS, .NET, and SQL Server.</li><li>Contributed to Agile sprints and team delivery.</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-light" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-wrapper__info"><p class="eyebrow"><span>03</span> BEHIND THE SYSTEMS</p><h2 class="section-title" id="about-title">Curiosity drives me.<br><span class="muted">Engineering grounds me.</span></h2><p>I’m Omar, a final-year data engineering student at the Faculty of Sciences of Sfax. I’m interested in what it takes to make AI useful beyond the model: serving, orchestration, data, and observability.</p><p>Outside projects, I mentor students in algorithms and competitive programming at CPC FSS. I enjoy breaking down difficult problems and helping others do the same.</p><div class="about-facts"><span><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg> Sfax, Tunisia</span><span>Arabic · English · French</span></div></div>
+        <div class="education"><p class="small-heading">EDUCATION</p><article><span class="education-year">2024 — PRESENT</span><h3>Engineer’s Degree<br>in Computer Science</h3><p>Faculty of Sciences Sfax<br>University of Sfax, Tunisia</p></article><article><span class="education-year">2022 — 2024</span><h3>Integrated Preparatory Cycle</h3><p>Computer Science · Faculty of Sciences Sfax</p></article><div class="certifications"><p class="small-heading">CONTINUED LEARNING</p><p>IBM Data Engineering Foundations Specialization</p><p>Computer Vision Fundamentals with Google Cloud</p></div></div>
+      </div>
+      <div class="skills-section"><div class="skills-heading"><p class="small-heading">MY TOOLKIT</p><p>The tools behind the work.</p></div><div class="skills-grid"><div><span class="skill-number">01 /</span><h3>AI & Inference</h3><p>vLLM · LangChain · PyTorch · TensorFlow · Scikit-learn</p></div><div><span class="skill-number">02 /</span><h3>Data Systems</h3><p>Python · SQL · Spark · Hadoop · Airflow · Apache IoTDB</p></div><div><span class="skill-number">03 /</span><h3>Infrastructure</h3><p>Kubernetes · Docker · Ansible · Git · Prometheus · Grafana</p></div></div></div>
+    </div>
+  </section>
+
+  <section id="community" aria-labelledby="community-title"><div class="container"><div class="community-header"><div><p class="eyebrow"><span>04</span> BEYOND THE CODE</p><h2 class="section-title" id="community-title">Stronger together.</h2></div><p>Problem solving, mentorship, and a little<br>competitive spirit.</p></div><div class="community-grid"><article><span class="community-symbol" aria-hidden="true">⌘</span><h3>Competitive programming</h3><p>Codeforces Specialist. 30th at TCPC 2024, 14th at EPT Solving Cup 6.0, and 1st at Hello World 6.0.</p></article><article><span class="community-symbol" aria-hidden="true">↗</span><h3>Hackathon mindset</h3><p>1st place at Technova 1.0 and Fit-Tech 1.0. Turning ideas into working solutions under real constraints.</p></article><article><span class="community-symbol" aria-hidden="true">◎</span><h3>Community & leadership</h3><p>CPC FSS mentor since 2025, former club lead and HR manager. Training, contests, and helping people grow.</p></article></div></div></section>
+
+  <section id="contact" aria-labelledby="contact-title"><div class="container contact-inner"><div class="contact-top"><p class="eyebrow">LET’S BUILD WHAT’S NEXT</p><span class="availability"><span class="status-dot" aria-hidden="true"></span>INTERNSHIP · FEBRUARY 2027</span></div><h2 class="section-title" id="contact-title">Good systems start<br>with a <span>conversation.</span></h2><div class="contact-bottom"><div><p>I’m looking for a 6-month end-of-studies internship<br>in AI engineering, LLM inference, or AI infrastructure.</p><a class="email-link" href="mailto:omar.bouattour.03@gmail.com">omar.bouattour.03@gmail.com <span aria-hidden="true">↗</span></a></div><div class="contact-actions"><a class="button button-dark" href="mailto:omar.bouattour.03@gmail.com">Get in touch <span aria-hidden="true">↗</span></a><button class="copy-email" type="button"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Copy email</span></button><span id="copy-status" class="sr-only" role="status" aria-live="polite"></span></div></div></div></section>
+</main>
+<footer class="footer"><div class="container footer-layout"><a class="monogram" href="#hero" aria-label="Back to top">ob<span>.</span></a><p>© <span id="year">2026</span> Omar Bouattour</p><div class="footer-links"><a href="https://github.com/OmarBouat" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/bouattour-omar" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="/Omar_Bouattour.pdf" download>CV ↓</a></div></div><div class="container footer-credit">Based on <a href="https://github.com/AnilSeervi/DevFolio" target="_blank" rel="noopener noreferrer">DevFolio</a> · Tailored for Omar.</div></footer>
+
+<dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span class="eyebrow" id="dialog-category"></span><button type="button" class="dialog-close" aria-label="Close project details">×</button></div><h2 id="dialog-title"></h2><p id="dialog-description"></p><h3>What I built</h3><ul id="dialog-details"></ul><div class="tags" id="dialog-tags"></div><div class="dialog-links" id="dialog-links"></div></dialog>
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 15v5h16v-5"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol><symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol><symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1 .1-2-1-3 4-.5 7-2 7-6 0-2-.5-3-2-4 .5-1 .5-3 0-4-2 0-3 1-4 2a12 12 0 0 0-6 0C8 2 7 1 5 1c-.5 1-.5 3 0 4-1.5 1-2 2-2 4 0 4 3 5.5 7 6-1 1-1 2-1 3v4"/></symbol></svg>
+</body>
+</html>
