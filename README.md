@@ -22,7 +22,7 @@ npm run build  # Produce the static site and photo manifest in dist/
 
 See [PHOTOS.md](PHOTOS.md). Put images in the relevant project or event folder under `public/images/`. They are discovered automatically and become card covers and multi-image galleries. Add optional `captions.json` files for captions and accessible descriptions.
 
-The current portrait comes from Omar's public GitHub profile, linked in the supplied CV. Place `portrait.jpg`, `portrait.png`, or `portrait.webp` in `public/images/profile/` to replace it.
+The current portrait and event photographs were supplied by Omar. The portrait lives in `public/images/profile/portrait.png`. Replace that file to update it; event images live in the matching album folders.
 
 The development server refreshes the photo manifest on page reload. Build and redeploy after changing photos on the hosted site.
 

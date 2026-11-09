@@ -287,3 +287,6 @@ dialog.no-photos .dialog-layout{grid-template-columns:1fr}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.button:hover,.project-card:hover{transform:none}}
 
 @media(min-width:851px){.hero{padding-top:54px}.hero-grid{padding-bottom:58px}h1{font-size:clamp(62px,6.4vw,80px)}.hero-copy .availability{margin-bottom:24px}.hero-eyebrow{margin-bottom:9px}.hero-role{margin-top:20px}.hero-description{line-height:1.85}.hero-actions{margin-top:24px}.hero-social{margin-top:26px}}
+
+/* Preserve every person and the complete text in event photographs and posters. */
+.moment-cover>img{object-fit:contain}

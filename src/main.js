@@ -215,7 +215,7 @@ fetch('/media.json').then(response => {
   if (validPhoto(result.portrait)) {
     const portrait = document.querySelector('.portrait');
     portrait.addEventListener('error', () => {
-      if (portrait.getAttribute('src') !== '/images/profile/omar.jpg') portrait.src = '/images/profile/omar.jpg';
+      if (portrait.getAttribute('src') !== '/images/profile/portrait.png') portrait.src = '/images/profile/portrait.png';
     });
     portrait.src = result.portrait.src;
     portrait.alt = result.portrait.alt;
