@@ -34,5 +34,13 @@
   "pda": {
     "folder": "projects/student-mental-health",
     "title": "Student Mental Health Analysis"
+  },
+  "hello-world": {
+    "folder": "competitions/hello-world-6",
+    "title": "Hello World 6.0"
+  },
+  "techresolve": {
+    "folder": "hackathons/techresolve-2",
+    "title": "TechResolve Challenge 2.0"
   }
 }

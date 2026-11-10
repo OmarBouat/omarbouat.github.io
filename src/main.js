@@ -116,7 +116,102 @@ const items = {
     ],
     tags: ['Python', 'Scikit-learn', 'Flask', 'Cross-validation']
   },
-...{"technova":{"story":true,"category":"HACKATHON · 1ST PLACE","title":"Technova 1.0","description":"A first-place finish at Technova 1.0, part of my journey of building and problem solving through hackathons.","details":["Awarded 1st place at Technova 1.0."],"tags":["Hackathon","1st place"]},"fit-tech":{"story":true,"category":"HACKATHON · 1ST PLACE","title":"Fit-Tech 1.0","description":"A first-place finish at Fit-Tech 1.0. One of the hackathon experiences that shaped my approach to working with a team.","details":["Awarded 1st place at Fit-Tech 1.0."],"tags":["Hackathon","1st place"]},"masterfaster":{"story":true,"category":"HACKATHON · 2ND PLACE","title":"MasterFaster 2.0","description":"A second-place finish at MasterFaster 2.0, alongside other challenges and competitions throughout my studies.","details":["Awarded 2nd place at MasterFaster 2.0.","Other hackathon results include 3rd place at I2I 1.0 and TRC 2.0."],"tags":["Hackathon","2nd place"]},"cpc":{"story":true,"category":"CPC FSS · COMMUNITY & LEADERSHIP","title":"Growing with CPC FSS","description":"Learning is better when it is shared. My time with the Competitive Programming Club at FSS has grown from coordination to leadership and mentoring.","details":["Mentor, 2025–present: helping students with algorithms, data structures, and competitive programming.","Club lead, 2024–2025: coordinated training sessions, contests, and club initiatives.","HR manager, 2023–2024: managed onboarding, communication, and member coordination."],"tags":["Mentoring","Leadership","Algorithms","Community"]}}
+...{
+  "technova": {
+    "story": true,
+    "category": "HACKATHON · 1ST PLACE",
+    "title": "Technova 1.0",
+    "description": "A first-place finish at Technova 1.0, part of my journey of building and problem solving through hackathons.",
+    "details": [
+      "Awarded 1st place at Technova 1.0."
+    ],
+    "tags": [
+      "Hackathon",
+      "1st place"
+    ]
+  },
+  "fit-tech": {
+    "story": true,
+    "category": "HACKATHON · 1ST PLACE",
+    "title": "Fit-Tech 1.0",
+    "description": "A first-place finish at Fit-Tech 1.0. One of the hackathon experiences that shaped my approach to working with a team.",
+    "details": [
+      "Awarded 1st place at Fit-Tech 1.0."
+    ],
+    "tags": [
+      "Hackathon",
+      "1st place"
+    ]
+  },
+  "masterfaster": {
+    "story": true,
+    "category": "HACKATHON · 2ND PLACE",
+    "title": "MasterFaster 2.0",
+    "description": "A second-place finish at MasterFaster 2.0, alongside other challenges and competitions throughout my studies.",
+    "details": [
+      "Awarded 2nd place at MasterFaster 2.0.",
+      "Other hackathon results include 3rd place at I2I 1.0 and TRC 2.0."
+    ],
+    "tags": [
+      "Hackathon",
+      "2nd place"
+    ]
+  },
+  "cpc": {
+    "story": true,
+    "category": "CPC FSS · COMMUNITY & LEADERSHIP",
+    "title": "Growing with CPC FSS",
+    "description": "Learning is better when it is shared. My time with CPC FSS has grown from member coordination to club leadership, mentoring, algorithms workshops, and community speaking.",
+    "details": [
+      "Mentor, 2025–present: helping students with algorithms, data structures, and competitive programming.",
+      "CPC FSS workshop: Brute Force & Greedy Algorithms, announced for November 12, 2025.",
+      "Featured in the Hello World Game 5.0 information-session announcement with Mohamed Yassine Abid, April 14, 2025.",
+      "Featured alongside CPC lead Emna Mnejja in an Episode 3 community guest announcement.",
+      "Club lead, 2024–2025: coordinated training sessions, contests, and club initiatives.",
+      "HR manager, 2023–2024: managed onboarding, communication, and member coordination."
+    ],
+    "tags": [
+      "Mentoring",
+      "Algorithms workshops",
+      "Leadership",
+      "Community"
+    ]
+  },
+  "hello-world": {
+    "story": true,
+    "category": "COMPETITIVE PROGRAMMING · 1ST PLACE",
+    "title": "Hello World 6.0",
+    "description": "Our team, “Our first and sadly last”, won first place at Hello World 6.0, a competitive-programming contest held at CRNS on April 26, 2026.",
+    "details": [
+      "Solved 9 of the 14 contest problems to secure first place.",
+      "Competed alongside Helmi Benfraj (ISIMS) and Ayman Feki (ENET’Com).",
+      "The contest was organized by IEEE CS ENIS SBC and held at CRNS on April 26, 2026."
+    ],
+    "tags": [
+      "Competitive programming",
+      "1st place",
+      "9 / 14 problems",
+      "Teamwork"
+    ]
+  },
+  "techresolve": {
+    "story": true,
+    "category": "TECHNICAL HACKATHON · 3RD PLACE",
+    "title": "TechResolve Challenge 2.0",
+    "description": "A third-place finish at TechResolve Challenge 2.0, a technical hackathon hosted at ISIMS by IEEE ISIMS Student Branch.",
+    "details": [
+      "Won the third prize at TechResolve Challenge 2.0, held on March 24–25, 2025.",
+      "Collaborated with Mohamed Ali Djemal, Haithem Ben Elbey, and Taher Chaltout.",
+      "Worked through team brainstorming and implementation during the technical challenge."
+    ],
+    "tags": [
+      "Hackathon",
+      "3rd place",
+      "IEEE ISIMS",
+      "Teamwork"
+    ]
+  }
+}
 };
 
 const dialog = document.querySelector('#project-dialog');

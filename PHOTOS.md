@@ -21,6 +21,8 @@ Create the relevant folder and add your photos:
 | Fit-Tech 1.0 | `hackathons/fit-tech/` |
 | MasterFaster 2.0 | `hackathons/masterfaster/` |
 | CPC FSS | `community/cpc/` |
+| Hello World 6.0 | `competitions/hello-world-6/` |
+| TechResolve Challenge 2.0 | `hackathons/techresolve-2/` |
 
 For example:
 

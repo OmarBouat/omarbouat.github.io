@@ -73,7 +73,7 @@ test('all internal links, local assets, and SVG references resolve without place
   for (const [, url] of css.matchAll(/url\(["']?(\/[^"')]+)["']?\)/g)) await access(path.join(root, 'public', url));
   assert.equal(document.querySelectorAll('h1').length, 1);
   assert.equal(document.querySelectorAll('.project-card').length, 5);
-  assert.equal(document.querySelectorAll('.moment-card').length, 4);
+  assert.equal(document.querySelectorAll('.moment-card').length, 6);
   assert.doesNotMatch(html, /googletagmanager|Lorem ipsum|Your Name|UA-122228201/);
 });
 
@@ -270,4 +270,37 @@ test('PDA and classification galleries each contain five curated images and open
     assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / 5');
     app.click('.dialog-close');
   }
+});
+
+test('new event albums and the expanded CPC story load their matching images', async () => {
+  const media = await buildMedia(root);
+  const expected = [
+    ['hello-world', 3, 'Hello World 6.0'],
+    ['techresolve', 2, 'TechResolve Challenge 2.0'],
+    ['cpc', 4, 'Growing with CPC FSS']
+  ];
+  const app = setup({ media });
+  await flush();
+  for (const [id, count, title] of expected) {
+    assert.equal(media.albums[id].length, count);
+    const card = app.document.querySelector('[data-album-card="' + id + '"]');
+    assert.equal(card.querySelector('[data-photo-count]').textContent, count + ' photos');
+    assert.equal(card.querySelector('[data-cover-image]').getAttribute('src'), media.albums[id][0].src);
+    app.click(card.querySelector('[data-open]'));
+    assert.equal(app.document.querySelector('#dialog-title').textContent, title);
+    assert.equal(app.document.querySelectorAll('.gallery-thumbnail').length, count);
+    for (let i = 1; i < count; i++) app.click('.gallery-next');
+    assert.equal(app.document.querySelector('#gallery-counter').textContent, count + ' / ' + count);
+    assert.equal(app.document.querySelector('#gallery-original').getAttribute('href'), media.albums[id][count - 1].src);
+    app.click('.dialog-close');
+    for (const photo of media.albums[id]) {
+      await access(path.join(root, 'public', photo.src));
+      assert.ok(photo.caption.length > 10);
+    }
+  }
+  app.click('[data-open="hello-world"]');
+  assert.match(app.document.querySelector('#dialog-details').textContent, /9 of the 14/);
+  app.click('.dialog-close');
+  app.click('[data-open="cpc"]');
+  assert.match(app.document.querySelector('#dialog-details').textContent, /Brute Force & Greedy Algorithms/);
 });

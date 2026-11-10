@@ -14,7 +14,7 @@ npm run dev
 Open http://127.0.0.1:3000. Set `PORT` to change the port.
 
 ```bash
-npm test       # Ten checks for interactions, curated galleries, media discovery, assets, and HTTP delivery
+npm test       # Eleven checks for interactions, project/event galleries, media discovery, assets, and HTTP delivery
 npm run build  # Produce the static site and photo manifest in dist/
 ```
 

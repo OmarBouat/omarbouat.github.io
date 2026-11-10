@@ -309,3 +309,15 @@ dialog.no-photos .dialog-layout{grid-template-columns:1fr}
 [data-theme="dark"] .pda-art>span{background:#303e5a;border-color:#52648b}
 @media(max-width:850px){.project-card-wide>.project-cover{height:310px}.pda-art{gap:7px;font-size:8px}.pda-art>.icon{margin-right:0;width:23px}.pda-art>span{padding:6px 7px}}
 @media(max-width:650px){.project-card-wide{grid-template-columns:1fr}.project-card-wide>.project-cover{height:235px}.pda-art{gap:10px;font-size:9px}.pda-art>.icon{width:27px;margin-right:4px}}
+
+/* Six event stories use a balanced desktop grid and complete photo covers. */
+.moment-card{display:flex;flex-direction:column}
+.moment-cover{flex-shrink:0}
+.moment-body{display:flex;flex-direction:column;flex:1}
+.moment-body>.text-link{margin-top:auto;padding-top:18px}
+.helloworld-cover{background:#ece4f6;color:#8163a4}
+.trc-cover{background:#e3eaf5;color:#637ca3}
+[data-theme="dark"] .helloworld-cover{background:#362a46;color:#c6a9e8}
+[data-theme="dark"] .trc-cover{background:#27364b;color:#acc2e5}
+@media(min-width:1101px){.moments-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.moment-cover{height:220px}.moment-body{padding:23px}.moment-body .project-category{font-size:9px}.moment-body h3{font-size:20px}.moment-body>p{font-size:12px}.moment-body>.text-link{font-size:12px}}
+@media(max-width:650px){.moment-body .project-category{font-size:8px}.moment-body>p{font-size:11px}.moment-body>.text-link{font-size:10px;padding-top:14px}}
