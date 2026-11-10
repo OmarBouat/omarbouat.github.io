@@ -30,5 +30,9 @@
   "cpc": {
     "folder": "community/cpc",
     "title": "CPC FSS — mentoring and leadership"
+  },
+  "pda": {
+    "folder": "projects/student-mental-health",
+    "title": "Student Mental Health Analysis"
   }
 }

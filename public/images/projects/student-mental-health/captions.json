@@ -1,0 +1,7 @@
+{
+  "01-survey-cohort.png": "Survey cohort overview: demographics, study year, and institution characteristics.",
+  "02-pca-variance.png": "PCA scree plot and cumulative explained variance for the selected variables.",
+  "03-correspondence-analysis.png": "Correspondence analysis of flourishing and loneliness categories, with the associated contingency heatmap.",
+  "04-cluster-projection.png": "K-means clusters and their centers projected into principal-component space.",
+  "05-balanced-model-comparison.png": "Logistic regression and random forest evaluation on a balanced dataset using 1:1 undersampling."
+}

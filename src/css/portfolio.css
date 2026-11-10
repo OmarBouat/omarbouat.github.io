@@ -295,3 +295,17 @@ dialog.no-photos .dialog-layout{grid-template-columns:1fr}
 .project-cover>img{object-fit:contain;background:var(--surface);padding:6px}
 .project-cover:hover>img{transform:none}
 .gallery-original{display:block;width:max-content;margin:8px auto 0;color:var(--accent);font-size:11px;line-height:1.8;text-decoration:underline;text-underline-offset:4px}
+
+/* A wider data-analysis card completes the five-project collection. */
+.project-card-wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+.project-card-wide>.project-cover{height:320px}
+.project-card-wide>.project-body{min-width:0}
+.pda-cover{background:#e6eaf8;color:#6073a2}
+.pda-art{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:40px;font-family:var(--mono);font-size:10px}
+.pda-art>.icon{width:30px;height:30px;margin-right:8px}
+.pda-art>span{border:1px solid #bdc7e3;background:#f4f6fc;border-radius:5px;padding:7px 10px}
+.pda-art>i{font-style:normal;opacity:.5}
+[data-theme="dark"] .pda-cover{background:#28324c;color:#b1bfed}
+[data-theme="dark"] .pda-art>span{background:#303e5a;border-color:#52648b}
+@media(max-width:850px){.project-card-wide>.project-cover{height:310px}.pda-art{gap:7px;font-size:8px}.pda-art>.icon{margin-right:0;width:23px}.pda-art>span{padding:6px 7px}}
+@media(max-width:650px){.project-card-wide{grid-template-columns:1fr}.project-card-wide>.project-cover{height:235px}.pda-art{gap:10px;font-size:9px}.pda-art>.icon{width:27px;margin-right:4px}}

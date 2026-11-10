@@ -1,18 +1,7 @@
 {
   "01-overview.png": "Slide 1 — Project overview: vegetable image classification, presented by Omar Bouattour.",
-  "02-challenge.png": "Slide 2 — Classifying 36 produce categories and comparing accuracy, inference speed, and model size.",
   "03-models.png": "Slide 3 — Comparing MobileNetV2, a custom CNN, and ResNet50.",
-  "04-dataset-training.png": "Slide 4 — Dataset splits, augmentation, and the shared training protocol.",
-  "05-mobilenetv2-architecture.png": "Slide 5 — MobileNetV2 architecture and classification head.",
-  "06-resnet50-architecture.png": "Slide 6 — ResNet50 architecture and classification head.",
-  "07-custom-cnn-architecture.png": "Slide 7 — Custom convolutional neural network architecture.",
-  "08-model-statistics.png": "Slide 8 — Comparing model parameters, file sizes, and training times.",
   "09-test-results.png": "Slide 9 — Test-set accuracy, precision, recall, and F1-score comparison.",
-  "10-custom-cnn-predictions.png": "Slide 10 — Custom CNN example predictions, including correct and incorrect classifications.",
   "11-transfer-learning-predictions.png": "Slide 11 — MobileNetV2 and ResNet50 example predictions.",
-  "12-convergence-errors.png": "Slide 12 — Training convergence and analysis of common classification errors.",
-  "13-custom-cnn-confusion.png": "Slide 13 — Custom CNN confusion matrix across produce categories.",
-  "14-mobilenet-confusion.png": "Slide 14 — MobileNet confusion matrix.",
-  "15-accuracy-efficiency.png": "Slide 15 — Comparing the trade-offs between predictive accuracy and deployment efficiency.",
-  "16-deployment-guide.png": "Slide 16 — Choosing models for mobile, real-time, cloud, and educational deployment scenarios."
+  "15-accuracy-efficiency.png": "Slide 15 — Comparing the trade-offs between predictive accuracy and deployment efficiency."
 }

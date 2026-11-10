@@ -44,11 +44,32 @@ document.querySelectorAll('[data-filter]').forEach(button => {
       card.hidden = !show;
       if (show) count++;
     });
-    document.querySelector('.project-count').textContent = count + ' projects';
+    document.querySelector('.project-count').textContent = count + (count === 1 ? ' project' : ' projects');
   });
 });
 
 const items = {
+  pda: {
+  "category": "DATA ANALYSIS · HEALTHY MINDS STUDY",
+  "title": "Student Mental Health Analysis",
+  "description": "A research project exploring student well-being through two Healthy Minds Study survey waves. The workflow moves from data preparation and visual exploration to multivariate analysis and machine-learning evaluation.",
+  "details": [
+    "Combined the 2023–2024 and 2024–2025 survey waves, covering 189,464 responses, and prepared shared variables and questionnaire scores for analysis.",
+    "Created exploratory visualizations of demographics, financial stress, well-being, and treatment patterns.",
+    "Used principal component analysis and correspondence analysis to examine numerical structure and categorical associations.",
+    "Explored K-means clustering and compared logistic regression with random forests, including a class-balanced evaluation."
+  ],
+  "tags": [
+    "Python",
+    "Pandas",
+    "NumPy",
+    "Matplotlib",
+    "Seaborn",
+    "Scikit-learn",
+    "PCA"
+  ],
+  "repository": "https://github.com/OmarBouat/Project-Data-Analysis"
+},
   llm: {
     category: 'AI INFRASTRUCTURE · APR — MAY 2026',
     title: 'LLM Serving Platform',

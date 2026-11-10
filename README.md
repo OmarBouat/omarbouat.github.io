@@ -14,7 +14,7 @@ npm run dev
 Open http://127.0.0.1:3000. Set `PORT` to change the port.
 
 ```bash
-npm test       # Nine checks for interactions, media discovery, assets, and HTTP delivery
+npm test       # Ten checks for interactions, curated galleries, media discovery, assets, and HTTP delivery
 npm run build  # Produce the static site and photo manifest in dist/
 ```
 
@@ -25,6 +25,8 @@ See [PHOTOS.md](PHOTOS.md). Put images in the relevant project or event folder u
 The current portrait and event photographs were supplied by Omar. The portrait lives in `public/images/profile/portrait.png`. Replace that file to update it; event images live in the matching album folders.
 
 The development server refreshes the photo manifest on page reload. Build and redeploy after changing photos on the hosted site.
+
+The project list includes Student Mental Health Analysis (PDA), based on the supplied presentation and verified [analysis notebooks](https://github.com/OmarBouat/Project-Data-Analysis). Its gallery and the vegetable-classification gallery each contain five curated images; see the photo guide for selected slide numbers.
 
 ## Structure
 

@@ -16,6 +16,7 @@ Create the relevant folder and add your photos:
 | Kubernetes platform | `projects/kubernetes/` |
 | Vegetable classification | `projects/vision/` |
 | Crop recommendation | `projects/crop/` |
+| Student mental health analysis (PDA) | `projects/student-mental-health/` |
 | Technova 1.0 | `hackathons/technova/` |
 | Fit-Tech 1.0 | `hackathons/fit-tech/` |
 | MasterFaster 2.0 | `hackathons/masterfaster/` |
@@ -54,3 +55,12 @@ Run `npm run dev` and reload the page after adding photos. The local server disc
 Albums without photos keep their designed covers. The event albums contain the photos supplied for the portfolio. Keep images around 1600–2000 pixels on the longest side and compressed for fast loading. Adding or removing files updates album counts automatically.
 
 New album folder definitions live in `content/albums.json`; add matching card and detail content when introducing a new project or event.
+
+## Curated project galleries
+
+The PDA and vegetable-classification galleries each publish five selected images. The complete uploaded slide sets remain in the parent workspace; only selected copies live under `public/images/projects/`.
+
+- **Student Mental Health Analysis:** source slides **7, 18, 25, 30, 36**. They show the survey cohort, PCA explained variance, correspondence analysis, K-means projection, and balanced model evaluation.
+- **Vegetable Image Classification:** source slides **1, 3, 9, 11, 15**. They show the overview, model approaches, test results, prediction examples, and accuracy-versus-efficiency trade-offs.
+
+The PDA album folder is `public/images/projects/student-mental-health/`. Keep five images in each curated folder when updating these selections.

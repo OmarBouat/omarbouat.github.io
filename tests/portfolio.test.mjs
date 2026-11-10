@@ -72,7 +72,7 @@ test('all internal links, local assets, and SVG references resolve without place
   const css = await readFile(path.join(root, 'src/css/portfolio.css'), 'utf8');
   for (const [, url] of css.matchAll(/url\(["']?(\/[^"')]+)["']?\)/g)) await access(path.join(root, 'public', url));
   assert.equal(document.querySelectorAll('h1').length, 1);
-  assert.equal(document.querySelectorAll('.project-card').length, 4);
+  assert.equal(document.querySelectorAll('.project-card').length, 5);
   assert.equal(document.querySelectorAll('.moment-card').length, 4);
   assert.doesNotMatch(html, /googletagmanager|Lorem ipsum|Your Name|UA-122228201/);
 });
@@ -87,8 +87,12 @@ test('project filters change visible projects, count, and pressed states', () =>
   assert.equal(document.querySelector('[data-filter="ml"]').getAttribute('aria-pressed'), 'true');
   click('[data-filter="infrastructure"]');
   assert.ok(visible().every(card => card.dataset.category === 'infrastructure'));
+  click('[data-filter="data"]');
+  assert.equal(visible().length, 1);
+  assert.equal(visible()[0].dataset.albumCard, 'pda');
+  assert.equal(document.querySelector('.project-count').textContent, '1 project');
   click('[data-filter="all"]');
-  assert.equal(visible().length, 4);
+  assert.equal(visible().length, 5);
 });
 
 test('all project and event buttons open details, tolerate empty albums, and restore focus', async () => {
@@ -104,6 +108,7 @@ test('all project and event buttons open details, tolerate empty albums, and res
     assert.ok(dialog.classList.contains('no-photos'));
     const repository = document.querySelector('#dialog-links a[target="_blank"]');
     if (trigger.dataset.open === 'kubernetes') assert.equal(repository.href, 'https://github.com/OmarBouat/K8S_IaC');
+    else if (trigger.dataset.open === 'pda') assert.equal(repository.href, 'https://github.com/OmarBouat/Project-Data-Analysis');
     else assert.equal(repository, null);
     click('.dialog-close');
     assert.equal(dialog.hasAttribute('open'), false);
@@ -237,5 +242,32 @@ test('HTTP serves the portrait, photo manifest, CV, and assets, and rejects priv
   } finally {
     server.closeAllConnections();
     await new Promise(resolve => server.close(resolve));
+  }
+});
+
+test('PDA and classification galleries each contain five curated images and open correctly', async () => {
+  const media = await buildMedia(root);
+  for (const id of ['pda', 'vision']) {
+    assert.equal(media.albums[id].length, 5, id + ' should have five selected images');
+    for (const photo of media.albums[id]) {
+      await access(path.join(root, 'public', photo.src));
+      assert.ok(photo.caption.length > 10);
+    }
+  }
+  const app = setup({ media });
+  await flush();
+  for (const id of ['pda', 'vision']) {
+    app.click('[data-open="' + id + '"]');
+    assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / 5');
+    assert.equal(app.document.querySelectorAll('.gallery-thumbnail').length, 5);
+    if (id === 'pda') {
+      assert.equal(app.document.querySelector('#dialog-title').textContent, 'Student Mental Health Analysis');
+      assert.equal(app.document.querySelector('#dialog-links a[target="_blank"]').href, 'https://github.com/OmarBouat/Project-Data-Analysis');
+    }
+    for (let i = 0; i < 4; i++) app.click('.gallery-next');
+    assert.equal(app.document.querySelector('#gallery-counter').textContent, '5 / 5');
+    app.click('.gallery-next');
+    assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / 5');
+    app.click('.dialog-close');
   }
 });
