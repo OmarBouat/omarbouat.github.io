@@ -1,0 +1,3 @@
+{
+  "01-inference-architecture.png": "LLM inference architecture: application clients, LiteLLM gateway, vLLM serving, observability, and Kubernetes infrastructure."
+}

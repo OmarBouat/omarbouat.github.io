@@ -134,6 +134,7 @@ test('photo albums support covers, thumbnails, captions, arrows, keyboard, and l
   assert.equal(document.querySelector('#gallery-counter').textContent, '3 / 3');
   click(document.querySelectorAll('.gallery-thumbnail')[1]);
   assert.equal(document.querySelector('#gallery-image').getAttribute('src'), photos[1].src);
+  assert.equal(document.querySelector('#gallery-original').getAttribute('href'), photos[1].src);
   assert.equal(document.querySelectorAll('.gallery-thumbnail')[1].getAttribute('aria-pressed'), 'true');
   document.querySelector('#gallery-image').dispatchEvent(new Event('error'));
   assert.equal(document.querySelector('#gallery-error').hidden, false);

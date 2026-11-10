@@ -290,3 +290,8 @@ dialog.no-photos .dialog-layout{grid-template-columns:1fr}
 
 /* Preserve every person and the complete text in event photographs and posters. */
 .moment-cover>img{object-fit:contain}
+
+/* Keep complete diagrams and presentation slides visible. */
+.project-cover>img{object-fit:contain;background:var(--surface);padding:6px}
+.project-cover:hover>img{transform:none}
+.gallery-original{display:block;width:max-content;margin:8px auto 0;color:var(--accent);font-size:11px;line-height:1.8;text-decoration:underline;text-underline-offset:4px}

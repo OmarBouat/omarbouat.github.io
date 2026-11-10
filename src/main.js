@@ -117,6 +117,7 @@ function renderPhoto(index) {
   galleryError.hidden = true;
   galleryImage.alt = photo.alt;
   galleryImage.src = photo.src;
+  document.querySelector('#gallery-original').href = photo.src;
   document.querySelector('#gallery-caption').textContent = photo.caption || '';
   document.querySelector('#gallery-counter').textContent = (photoIndex + 1) + ' / ' + activePhotos.length;
   document.querySelectorAll('.gallery-thumbnail').forEach((button, i) => button.setAttribute('aria-pressed', String(i === photoIndex)));
