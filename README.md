@@ -18,6 +18,12 @@ npm test       # Eleven checks for interactions, project/event galleries, media 
 npm run build  # Produce the static site and photo manifest in dist/
 ```
 
+## GitHub Pages
+
+This repository publishes to https://omarbouat.github.io/ using the workflow in `.github/workflows/deploy.yml`. In repository **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source once. Pushes to `main` then install dependencies, run tests, build `dist/`, and deploy the website automatically. You can also start the workflow from the **Actions** tab.
+
+Keep the repository named `omarbouat.github.io`; asset paths assume the website is hosted at the domain root. Generated files and dependencies stay out of Git. The `.nojekyll` file is included in the build for compatibility with manual static publishing.
+
 ## Photos
 
 See [PHOTOS.md](PHOTOS.md). Put images in the relevant project or event folder under `public/images/`. They are discovered automatically and become card covers and multi-image galleries. Add optional `captions.json` files for captions and accessible descriptions.
