@@ -245,10 +245,11 @@ test('HTTP serves the portrait, photo manifest, CV, and assets, and rejects priv
   }
 });
 
-test('PDA and classification galleries each contain five curated images and open correctly', async () => {
+test('curated project galleries publish the selected image counts and open correctly', async () => {
   const media = await buildMedia(root);
-  for (const id of ['pda', 'vision']) {
-    assert.equal(media.albums[id].length, 5, id + ' should have five selected images');
+  const selections = [['pda', 5], ['vision', 5], ['crop', 3]];
+  for (const [id, count] of selections) {
+    assert.equal(media.albums[id].length, count, id + ' should publish the selected images');
     for (const photo of media.albums[id]) {
       await access(path.join(root, 'public', photo.src));
       assert.ok(photo.caption.length > 10);
@@ -256,18 +257,18 @@ test('PDA and classification galleries each contain five curated images and open
   }
   const app = setup({ media });
   await flush();
-  for (const id of ['pda', 'vision']) {
+  for (const [id, count] of selections) {
     app.click('[data-open="' + id + '"]');
-    assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / 5');
-    assert.equal(app.document.querySelectorAll('.gallery-thumbnail').length, 5);
+    assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / ' + count);
+    assert.equal(app.document.querySelectorAll('.gallery-thumbnail').length, count);
     if (id === 'pda') {
       assert.equal(app.document.querySelector('#dialog-title').textContent, 'Student Mental Health Analysis');
       assert.equal(app.document.querySelector('#dialog-links a[target="_blank"]').href, 'https://github.com/OmarBouat/Project-Data-Analysis');
     }
-    for (let i = 0; i < 4; i++) app.click('.gallery-next');
-    assert.equal(app.document.querySelector('#gallery-counter').textContent, '5 / 5');
+    for (let i = 1; i < count; i++) app.click('.gallery-next');
+    assert.equal(app.document.querySelector('#gallery-counter').textContent, count + ' / ' + count);
     app.click('.gallery-next');
-    assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / 5');
+    assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / ' + count);
     app.click('.dialog-close');
   }
 });

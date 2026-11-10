@@ -26,7 +26,7 @@ The current portrait and event photographs were supplied by Omar. The portrait l
 
 The development server refreshes the photo manifest on page reload. Build and redeploy after changing photos on the hosted site.
 
-The project list includes Student Mental Health Analysis (PDA), based on the supplied presentation and verified [analysis notebooks](https://github.com/OmarBouat/Project-Data-Analysis). Its gallery and the vegetable-classification gallery each contain five curated images; see the photo guide for selected slide numbers.
+The project list includes Student Mental Health Analysis (PDA), based on the supplied presentation and verified [analysis notebooks](https://github.com/OmarBouat/Project-Data-Analysis). Its gallery and the vegetable-classification gallery each contain five curated images. The crop-recommendation gallery contains three selected images covering its objective, model evaluation, and web application. See the photo guide for selected slide numbers.
 
 ## Structure
 

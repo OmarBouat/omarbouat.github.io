@@ -1,0 +1,5 @@
+{
+  "01-project-objective.png": "Project objective: use soil nutrients and climate variables to recommend a crop.",
+  "02-model-training-results.png": "GridSearchCV with four-fold cross-validation: tuned parameters and results for logistic regression, random forest, SVM, and gradient boosting.",
+  "03-web-application.png": "Crop-recommendation web application for entering soil and climate values and requesting a prediction."
+}

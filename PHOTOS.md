@@ -66,3 +66,7 @@ The PDA and vegetable-classification galleries each publish five selected images
 - **Vegetable Image Classification:** source slides **1, 3, 9, 11, 15**. They show the overview, model approaches, test results, prediction examples, and accuracy-versus-efficiency trade-offs.
 
 The PDA album folder is `public/images/projects/student-mental-health/`. Keep five images in each curated folder when updating these selections.
+
+### Crop recommendation selection
+
+The crop-recommendation gallery publishes **three images**, from source slides **3, 13, and 15**: the prediction objective, tuned model comparisons, and the web application. They are stored under `public/images/projects/crop/`. Keep three selected images in this gallery.
