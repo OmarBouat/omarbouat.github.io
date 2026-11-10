@@ -204,7 +204,7 @@ test('media discovery orders photos naturally, preserves captions, encodes URLs,
     await writeFile(path.join(fixture, 'content/albums.json'), JSON.stringify({ demo: { folder: 'projects/demo', title: 'Demo project' }, empty: { folder: 'hackathons/empty', title: 'Empty album' } }));
     for (const file of ['10.jpg', '2.jpg', '1 photo.webp', 'notes.txt']) await writeFile(path.join(fixture, 'public/images/projects/demo', file), 'test fixture');
     await writeFile(path.join(fixture, 'public/images/projects/demo/captions.json'), JSON.stringify({ '2.jpg': 'A useful caption' }));
-    await writeFile(path.join(fixture, 'public/images/profile/omar.jpg'), 'test fixture');
+    await writeFile(path.join(fixture, 'public/images/profile/another-photo.jpg'), 'test fixture');
     await writeFile(path.join(fixture, 'public/images/profile/portrait.png'), 'test fixture');
     const result = await buildMedia(fixture);
     assert.deepEqual(result.albums.demo.map(photo => photo.src), ['/images/projects/demo/1%20photo.webp', '/images/projects/demo/2.jpg', '/images/projects/demo/10.jpg']);
@@ -223,7 +223,7 @@ test('HTTP serves the portrait, photo manifest, CV, and assets, and rejects priv
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const origin = 'http://127.0.0.1:' + server.address().port;
   try {
-    for (const [route, type] of [['/', 'text/html'], ['/main.js', 'text/javascript'], ['/theme.js', 'text/javascript'], ['/css/portfolio.css', 'text/css'], ['/fonts/dm-sans.woff2', 'font/woff2'], ['/images/profile/omar.jpg', 'image/jpeg'], ['/media.json', 'application/json'], ['/Omar_Bouattour.pdf', 'application/pdf']]) {
+    for (const [route, type] of [['/', 'text/html'], ['/main.js', 'text/javascript'], ['/theme.js', 'text/javascript'], ['/css/portfolio.css', 'text/css'], ['/fonts/dm-sans.woff2', 'font/woff2'], ['/images/profile/portrait.png', 'image/png'], ['/media.json', 'application/json'], ['/Omar_Bouattour.pdf', 'application/pdf']]) {
       const response = await fetch(origin + route);
       assert.equal(response.status, 200, route);
       assert.ok(response.headers.get('content-type').startsWith(type), route);

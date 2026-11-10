@@ -40,14 +40,15 @@ The project list includes Student Mental Health Analysis (PDA), based on the sup
 - `scripts/`: local server and static build.
 - `tests/`: Node test runner and LinkeDOM checks.
 - `.openai/hosting.json`: existing Site identity and static output directory.
-- `vendor/devfolio/`: retained stylesheet from the initial MIT-licensed template import.
 
 ## Editing and validation
 
 Update visible summaries in `src/index.html` and detailed descriptions in `src/main.js`. Update the CV in `public/Omar_Bouattour.pdf`. Availability follows the supplied CV: a six-month internship starting February 2027.
 
+`public/` contains only assets used by the website. Keep original slide decks and unused uploads outside the repository. `node_modules/` and `dist/` are generated locally and ignored by Git; recreate them with `npm ci` and `npm run build`.
+
 Run `npm test`, `npm run build`, and `git diff --check` before deployment. The test suite checks DOM behavior and server responses; browser verification is still needed for visual layout, native dialog behavior, and actual mobile rendering.
 
 ## Attribution
 
-The initial version imported [DevFolio](https://github.com/AnilSeervi/DevFolio) by Anil Seervi; its MIT license remains in `LICENSE`. The revised design and galleries are custom implementations inspired by the user-supplied references. DM Sans and Space Grotesk are self-hosted under the SIL Open Font License.
+The initial version imported [DevFolio](https://github.com/AnilSeervi/DevFolio) by Anil Seervi at commit `650cbbef5c5e132321ef51e7b8626d98f11276ad`. Its MIT license remains in `LICENSE`. The current design and galleries use custom HTML, CSS, and JavaScript inspired by the references above; the unused template stylesheet has been removed. DM Sans and Space Grotesk are self-hosted under the SIL Open Font License; their license files are in `public/fonts/`.
