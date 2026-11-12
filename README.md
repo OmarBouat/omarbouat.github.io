@@ -49,7 +49,7 @@ The project list includes Student Mental Health Analysis (PDA), based on the sup
 
 ## Editing and validation
 
-Update visible summaries in `src/index.html` and detailed descriptions in `src/main.js`. Update the CV in `public/Omar_Bouattour.pdf`. Availability follows the supplied CV: a six-month internship starting February 2027.
+Update visible summaries in `src/index.html` and detailed descriptions in `src/main.js`. Update the CV in `public/Omar_Bouattour.pdf`. The current CV includes freelance AI and full-stack work at UTA Metaux (September–October 2026), an autonomous business agent, and updated AI/backend skills. Availability follows the supplied CV: a six-month internship starting February 2027.
 
 `public/` contains only assets used by the website. Keep original slide decks and unused uploads outside the repository. `node_modules/` and `dist/` are generated locally and ignored by Git; recreate them with `npm ci` and `npm run build`.
 
