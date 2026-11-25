@@ -1,3 +1,4 @@
 {
+  "00-cover.png": "Illustrated cover: GPU inference, an API gateway, and monitoring for the LLM Serving Platform.",
   "01-inference-architecture.png": "LLM inference architecture: application clients, LiteLLM gateway, vLLM serving, observability, and Kubernetes infrastructure."
 }

@@ -14,7 +14,7 @@ npm run dev
 Open http://127.0.0.1:3000. Set `PORT` to change the port.
 
 ```bash
-npm test       # Eleven checks for interactions, project/event galleries, media discovery, assets, and HTTP delivery
+npm test       # Check interactions, motion preferences, galleries, media discovery, assets, and HTTP delivery
 npm run build  # Produce the static site and photo manifest in dist/
 ```
 
@@ -32,20 +32,22 @@ The current portrait and event photographs were supplied by Omar. The portrait l
 
 The development server refreshes the photo manifest on page reload. Build and redeploy after changing photos on the hosted site.
 
-The project list includes Student Mental Health Analysis (PDA), based on the supplied presentation and verified [analysis notebooks](https://github.com/OmarBouat/Project-Data-Analysis). Its gallery and the vegetable-classification gallery each contain five curated images. The crop-recommendation gallery contains three selected images covering its objective, model evaluation, and web application. See the photo guide for selected slide numbers.
+The project list includes Student Mental Health Analysis (PDA), based on the supplied presentation and verified [analysis notebooks](https://github.com/OmarBouat/Project-Data-Analysis). Every project starts with an approved illustrated cover. The PDA and vegetable-classification galleries each retain five curated screenshots after the cover; crop recommendation retains three covering its objective, model evaluation, and web application. See the photo guide for selected slide numbers.
 
 ## Structure
 
-- `src/index.html`: hero, about, projects, experience, hackathons, education, and contact.
+- `src/index.html`: hero, CV technology rows, about, experience, projects, hackathons, education, and contact.
 - `src/css/portfolio.css`: responsive layout and light/dark theme variables.
 - `src/theme.js`: applies a saved theme before the first paint.
-- `src/main.js`: filters, theme toggle, menu, project/event details, photo galleries, clipboard.
+- `src/main.js`: technology scrolling controls, entrance animations, filters, theme, navigation, galleries, and clipboard.
 - `content/albums.json`: album IDs and photo folders.
 - `public/`: CV, portrait, photo albums, self-hosted fonts, favicon, and sharing artwork.
 - `scripts/media.mjs`: image discovery, sorting, captions, and manifest generation.
 - `scripts/`: local server and static build.
 - `tests/`: Node test runner and LinkeDOM checks.
 - `.openai/hosting.json`: existing Site identity and static output directory.
+
+The technology strip includes all 45 languages, frameworks, platforms, and model tools named in the CV. Pause scrolling to view the complete wrapped list. Reduced-motion preferences automatically show that static list and disable entrance animations. Experience cards stay fully expanded and appear before projects.
 
 ## Editing and validation
 

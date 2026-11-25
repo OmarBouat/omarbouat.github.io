@@ -30,6 +30,31 @@ themeToggle.addEventListener('click', () => {
 });
 updateThemeButton();
 
+const technologyRows = document.querySelector('.technology-rows');
+const motionToggle = document.querySelector('.motion-toggle');
+const motionPreference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+let scrollingPaused = false;
+document.querySelectorAll('.technology-track').forEach(track => {
+  const copy = track.querySelector('.technology-list').cloneNode(true);
+  copy.classList.add('technology-copy');
+  copy.setAttribute('aria-hidden', 'true');
+  copy.removeAttribute('aria-label');
+  track.append(copy);
+});
+function updateScrolling() {
+  const reducedMotion = motionPreference?.matches === true;
+  technologyRows.classList.toggle('is-running', !scrollingPaused && !reducedMotion);
+  motionToggle.hidden = reducedMotion;
+  motionToggle.setAttribute('aria-pressed', String(scrollingPaused));
+  motionToggle.textContent = scrollingPaused ? 'Resume scrolling' : 'Pause scrolling';
+}
+motionToggle.addEventListener('click', () => {
+  scrollingPaused = !scrollingPaused;
+  updateScrolling();
+});
+motionPreference?.addEventListener('change', updateScrolling);
+updateScrolling();
+
 const cards = [...document.querySelectorAll('.project-card')];
 document.querySelectorAll('[data-filter]').forEach(button => {
   button.addEventListener('click', () => {
@@ -375,6 +400,14 @@ document.querySelector('.copy-email').addEventListener('click', async () => {
 });
 document.querySelector('#year').textContent = new Date().getFullYear();
 if ('IntersectionObserver' in window) {
+  const revealObserver = new window.IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      if (!motionPreference?.matches) entry.target.classList.add('is-revealed');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.about-grid > *, .experience-entry, .project-card, .moment-card, .contact-card').forEach(item => revealObserver.observe(item));
   const observer = new window.IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;

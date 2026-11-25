@@ -30,7 +30,7 @@ function setup(options = {}) {
   let focused;
   document.querySelectorAll('button').forEach(button => { button.focus = () => { focused = button; }; });
   vm.runInNewContext(script, {
-    document, window: {}, localStorage: storage,
+    document, window: options.window || {}, localStorage: storage,
     navigator: { clipboard: { writeText: options.clipboard || (async () => {}) } },
     fetch: async () => {
       if (options.mediaFails) throw new Error('Offline');
@@ -93,6 +93,73 @@ test('project filters change visible projects, count, and pressed states', () =>
   assert.equal(document.querySelector('.project-count').textContent, '1 project');
   click('[data-filter="all"]');
   assert.equal(visible().length, 5);
+});
+
+test('CV technologies scroll accessibly, can all be viewed when paused, and follow motion preferences', () => {
+  let preferenceChanged;
+  const preference = { matches: false, addEventListener: (event, callback) => { preferenceChanged = callback; } };
+  const app = setup({ window: { matchMedia: () => preference } });
+  const rows = app.document.querySelector('.technology-rows');
+  const toggle = app.document.querySelector('.motion-toggle');
+  const technologies = [...rows.querySelectorAll('.technology-list:not([aria-hidden]) li')].map(item => item.textContent);
+  const expected = ['Python', 'C', 'C++', 'Java', 'JavaScript', 'TypeScript', 'SQL', 'PL/SQL', 'PyTorch', 'TensorFlow', 'Scikit-learn', 'Keras', 'MobileNetV2', 'ResNet50', 'CNN', 'vLLM', 'Qwen', 'GPT', 'LangChain', 'LangGraph', 'LiteLLM', 'AI Agents', 'OpenAI-compatible APIs', 'Open WebUI', 'Flask', 'SQLAlchemy', 'ReactJS', '.NET', 'Spark', 'Hadoop', 'Airflow', 'MQTT', 'Apache IoTDB', 'Redis', 'PostgreSQL', 'SQL Server', 'Kubernetes', 'Docker', 'Ansible', 'Git', 'CI/CD', 'Gitea', 'Nexus', 'Prometheus', 'Grafana'];
+  assert.deepEqual(new Set(technologies), new Set(expected));
+  assert.equal(technologies.length, new Set(technologies).size, 'Each technology is announced only once');
+  assert.equal(rows.querySelectorAll('.technology-copy[aria-hidden="true"]').length, 2);
+  assert.ok(rows.classList.contains('is-running'));
+  app.click(toggle);
+  assert.equal(rows.classList.contains('is-running'), false, 'Pausing exposes the complete wrapped list');
+  assert.equal(toggle.getAttribute('aria-pressed'), 'true');
+  assert.equal(toggle.textContent, 'Resume scrolling');
+  app.click(toggle);
+  assert.ok(rows.classList.contains('is-running'));
+  preference.matches = true;
+  preferenceChanged();
+  assert.equal(rows.classList.contains('is-running'), false);
+  assert.equal(toggle.hidden, true);
+  preference.matches = false;
+  preferenceChanged();
+  assert.ok(rows.classList.contains('is-running'));
+  const reduced = setup({ window: { matchMedia: () => ({ matches: true, addEventListener() {} }) } });
+  assert.equal(reduced.document.querySelector('.technology-rows').classList.contains('is-running'), false);
+  assert.equal(reduced.document.querySelector('.motion-toggle').hidden, true);
+});
+
+test('experience comes before projects and all four roles show employer, dates, and achievements without expansion', () => {
+  const { document } = parseHTML(html);
+  const sections = [...document.querySelectorAll('main > section')].map(section => section.id);
+  assert.ok(sections.indexOf('experience') < sections.indexOf('projects'));
+  const navigation = [...document.querySelectorAll('.nav-links a')].map(link => link.getAttribute('href'));
+  assert.ok(navigation.indexOf('#experience') < navigation.indexOf('#projects'));
+  const experience = document.querySelector('#experience');
+  assert.equal(experience.querySelectorAll('details, [hidden]').length, 0);
+  const roles = [...experience.querySelectorAll('.experience-entry')];
+  assert.deepEqual(roles.map(role => role.querySelector('h3').textContent), ['AI & Full-Stack Engineer', 'AI / LLM Infrastructure Intern', 'Data Engineering Intern', 'Full-Stack Development Intern']);
+  for (const role of roles) {
+    assert.ok(role.querySelector('.experience-company').textContent);
+    assert.equal(role.querySelectorAll('time[datetime]').length, 2);
+    assert.ok(role.querySelectorAll('li').length >= 2);
+  }
+});
+
+test('entrances run once on visible content and respect reduced motion', () => {
+  for (const reduced of [false, true]) {
+    const observers = [];
+    class Observer {
+      constructor(callback) { this.callback = callback; this.observed = []; observers.push(this); }
+      observe(node) { this.observed.push(node); }
+      unobserve(node) { this.observed = this.observed.filter(item => item !== node); }
+    }
+    const app = setup({ window: { IntersectionObserver: Observer, matchMedia: () => ({ matches: reduced, addEventListener() {} }) } });
+    const entry = app.document.querySelector('.experience-entry');
+    const observer = observers[0];
+    assert.ok(observer.observed.includes(entry));
+    observer.callback([{ target: entry, isIntersecting: false }]);
+    assert.equal(entry.classList.contains('is-revealed'), false);
+    observer.callback([{ target: entry, isIntersecting: true }]);
+    assert.equal(entry.classList.contains('is-revealed'), !reduced);
+    assert.equal(observer.observed.includes(entry), false);
+  }
 });
 
 test('all project and event buttons open details, tolerate empty albums, and restore focus', async () => {
@@ -245,11 +312,13 @@ test('HTTP serves the portrait, photo manifest, CV, and assets, and rejects priv
   }
 });
 
-test('curated project galleries publish the selected image counts and open correctly', async () => {
+test('approved project covers appear first and retain all selected screenshots in their galleries', async () => {
   const media = await buildMedia(root);
-  const selections = [['pda', 5], ['vision', 5], ['crop', 3]];
+  const selections = [['llm', 2], ['kubernetes', 2], ['pda', 6], ['vision', 6], ['crop', 4]];
   for (const [id, count] of selections) {
     assert.equal(media.albums[id].length, count, id + ' should publish the selected images');
+    assert.ok(media.albums[id][0].src.endsWith('/00-cover.png'));
+    assert.match(media.albums[id][0].caption, /^Illustrated cover:/);
     for (const photo of media.albums[id]) {
       await access(path.join(root, 'public', photo.src));
       assert.ok(photo.caption.length > 10);
@@ -258,7 +327,10 @@ test('curated project galleries publish the selected image counts and open corre
   const app = setup({ media });
   await flush();
   for (const [id, count] of selections) {
+    const card = app.document.querySelector('[data-album-card="' + id + '"]');
+    assert.equal(card.querySelector('[data-cover-image]').getAttribute('src'), media.albums[id][0].src);
     app.click('[data-open="' + id + '"]');
+    assert.equal(app.document.querySelector('#gallery-image').getAttribute('src'), media.albums[id][0].src);
     assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / ' + count);
     assert.equal(app.document.querySelectorAll('.gallery-thumbnail').length, count);
     if (id === 'pda') {

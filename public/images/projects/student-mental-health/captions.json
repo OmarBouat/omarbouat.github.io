@@ -1,4 +1,5 @@
 {
+  "00-cover.png": "Illustrated cover: anonymous student surveys, data clusters, and student mental-health analysis.",
   "01-survey-cohort.png": "Survey cohort overview: demographics, study year, and institution characteristics.",
   "02-pca-variance.png": "PCA scree plot and cumulative explained variance for the selected variables.",
   "03-correspondence-analysis.png": "Correspondence analysis of flourishing and loneliness categories, with the associated contingency heatmap.",

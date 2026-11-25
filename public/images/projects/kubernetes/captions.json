@@ -1,3 +1,4 @@
 {
+  "00-cover.png": "Illustrated cover: a source-to-deployment pipeline and the Kubernetes infrastructure lab.",
   "01-platform-architecture.png": "Kubernetes IaC lab architecture: provisioning, CI/CD services, ingress, application workloads, and persistent storage."
 }
