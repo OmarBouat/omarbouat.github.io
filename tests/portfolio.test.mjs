@@ -106,6 +106,10 @@ test('CV technologies scroll accessibly, can all be viewed when paused, and foll
   assert.deepEqual(new Set(technologies), new Set(expected));
   assert.equal(technologies.length, new Set(technologies).size, 'Each technology is announced only once');
   assert.equal(rows.querySelectorAll('.technology-copy[aria-hidden="true"]').length, 2);
+  assert.equal(rows.querySelectorAll('.technology-copy button:not([inert])').length, 0, 'Repeated logos stay out of keyboard navigation');
+  const firstLogo = rows.querySelector('.technology-logo');
+  app.click(firstLogo);
+  assert.equal(app.focused(), firstLogo, 'Tapping explicitly focuses a logo to reveal its name');
   assert.ok(rows.classList.contains('is-running'));
   app.click(toggle);
   assert.equal(rows.classList.contains('is-running'), false, 'Pausing exposes the complete wrapped list');
@@ -123,6 +127,26 @@ test('CV technologies scroll accessibly, can all be viewed when paused, and foll
   const reduced = setup({ window: { matchMedia: () => ({ matches: true, addEventListener() {} }) } });
   assert.equal(reduced.document.querySelector('.technology-rows').classList.contains('is-running'), false);
   assert.equal(reduced.document.querySelector('.motion-toggle').hidden, true);
+});
+
+test('each CV technology has a local SVG and a named control for hover, focus, or tap', async () => {
+  const { document } = parseHTML(html);
+  const catalog = JSON.parse(await readFile(path.join(root, 'content/technology-logos.json'), 'utf8')).icons;
+  const logos = [...document.querySelectorAll('.technology-logo')];
+  assert.equal(logos.length, 45);
+  assert.equal(new Set(logos.map(logo => logo.getAttribute('aria-label'))).size, 45);
+  for (const logo of logos) {
+    const name = logo.getAttribute('aria-label');
+    const image = logo.querySelector('img');
+    assert.ok(catalog[name], name + ' has recorded provenance');
+    assert.equal(image.getAttribute('src'), '/images/technologies/' + catalog[name].file);
+    assert.equal(image.getAttribute('alt'), '', 'The named control supplies the accessible label');
+    assert.equal(logo.querySelector('.technology-name').textContent, name);
+    assert.equal(logo.getAttribute('type'), 'button', 'Names are reachable with keyboard and touch');
+    const svg = await readFile(path.join(root, 'public/images/technologies', catalog[name].file), 'utf8');
+    assert.match(svg, /<svg\b[^>]*\bviewBox=/);
+    assert.doesNotMatch(svg, /<(?:script|foreignObject)\b|\son\w+=|(?:href|src)=["']https?:/i);
+  }
 });
 
 test('experience comes before projects and all four roles show employer, dates, and achievements without expansion', () => {

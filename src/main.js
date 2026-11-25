@@ -34,11 +34,15 @@ const technologyRows = document.querySelector('.technology-rows');
 const motionToggle = document.querySelector('.motion-toggle');
 const motionPreference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
 let scrollingPaused = false;
+document.querySelectorAll('.technology-logo').forEach(button => {
+  button.addEventListener('click', () => button.focus({ preventScroll: true }));
+});
 document.querySelectorAll('.technology-track').forEach(track => {
   const copy = track.querySelector('.technology-list').cloneNode(true);
   copy.classList.add('technology-copy');
   copy.setAttribute('aria-hidden', 'true');
   copy.removeAttribute('aria-label');
+  copy.querySelectorAll('button').forEach(button => button.setAttribute('inert', ''));
   track.append(copy);
 });
 function updateScrolling() {

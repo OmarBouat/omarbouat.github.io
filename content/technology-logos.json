@@ -1,0 +1,237 @@
+{
+  "notes": [
+    "Concepts without a standalone brand logo use original icons.",
+    "GPT uses the OpenAI mark; Nexus uses the Sonatype mark.",
+    "Simple Icons SVG fills use the catalog brand colors.",
+    "Brand marks identify technologies and do not imply endorsement."
+  ],
+  "icons": {
+    "Python": {
+      "file": "python.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/python/python-original.svg",
+      "library": "Devicon"
+    },
+    "C": {
+      "file": "c.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/c/c-original.svg",
+      "library": "Devicon"
+    },
+    "C++": {
+      "file": "cplusplus.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/cplusplus/cplusplus-original.svg",
+      "library": "Devicon"
+    },
+    "Java": {
+      "file": "java.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/java/java-original.svg",
+      "library": "Devicon"
+    },
+    "JavaScript": {
+      "file": "javascript.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/javascript/javascript-original.svg",
+      "library": "Devicon"
+    },
+    "TypeScript": {
+      "file": "typescript.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/typescript/typescript-original.svg",
+      "library": "Devicon"
+    },
+    "PyTorch": {
+      "file": "pytorch.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/pytorch/pytorch-original.svg",
+      "library": "Devicon"
+    },
+    "TensorFlow": {
+      "file": "tensorflow.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/tensorflow/tensorflow-original.svg",
+      "library": "Devicon"
+    },
+    "Scikit-learn": {
+      "file": "scikitlearn.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/scikitlearn/scikitlearn-original.svg",
+      "library": "Devicon"
+    },
+    "Keras": {
+      "file": "keras.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/keras/keras-original.svg",
+      "library": "Devicon"
+    },
+    "Flask": {
+      "file": "flask.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/flask/flask-original.svg",
+      "library": "Devicon"
+    },
+    "SQLAlchemy": {
+      "file": "sqlalchemy.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/sqlalchemy/sqlalchemy-original.svg",
+      "library": "Devicon"
+    },
+    "ReactJS": {
+      "file": "react.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/react/react-original.svg",
+      "library": "Devicon"
+    },
+    ".NET": {
+      "file": "dotnetcore.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/dotnetcore/dotnetcore-original.svg",
+      "library": "Devicon"
+    },
+    "Spark": {
+      "file": "apachespark.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/apachespark/apachespark-original.svg",
+      "library": "Devicon"
+    },
+    "Hadoop": {
+      "file": "hadoop.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/hadoop/hadoop-original.svg",
+      "library": "Devicon"
+    },
+    "Airflow": {
+      "file": "apacheairflow.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/apacheairflow/apacheairflow-original.svg",
+      "library": "Devicon"
+    },
+    "Redis": {
+      "file": "redis.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/redis/redis-original.svg",
+      "library": "Devicon"
+    },
+    "PostgreSQL": {
+      "file": "postgresql.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/postgresql/postgresql-original.svg",
+      "library": "Devicon"
+    },
+    "SQL Server": {
+      "file": "microsoftsqlserver.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/microsoftsqlserver/microsoftsqlserver-original.svg",
+      "library": "Devicon"
+    },
+    "Kubernetes": {
+      "file": "kubernetes.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/kubernetes/kubernetes-original.svg",
+      "library": "Devicon"
+    },
+    "Docker": {
+      "file": "docker.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/docker/docker-original.svg",
+      "library": "Devicon"
+    },
+    "Ansible": {
+      "file": "ansible.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/ansible/ansible-original.svg",
+      "library": "Devicon"
+    },
+    "Git": {
+      "file": "git.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/git/git-original.svg",
+      "library": "Devicon"
+    },
+    "Gitea": {
+      "file": "gitea.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/gitea/gitea-original.svg",
+      "library": "Devicon"
+    },
+    "Prometheus": {
+      "file": "prometheus.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/prometheus/prometheus-original.svg",
+      "library": "Devicon"
+    },
+    "Grafana": {
+      "file": "grafana.svg",
+      "source": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/grafana/grafana-original.svg",
+      "library": "Devicon"
+    },
+    "vLLM": {
+      "file": "vllm.svg",
+      "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/05260484d9f4de68f90cc87a634ae68fa4043efd/packages/static-svg/icons/vllm-color.svg",
+      "library": "Lobe Icons"
+    },
+    "Qwen": {
+      "file": "qwen.svg",
+      "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/05260484d9f4de68f90cc87a634ae68fa4043efd/packages/static-svg/icons/qwen-color.svg",
+      "library": "Lobe Icons"
+    },
+    "GPT": {
+      "file": "openai.svg",
+      "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/05260484d9f4de68f90cc87a634ae68fa4043efd/packages/static-svg/icons/openai.svg",
+      "library": "Lobe Icons"
+    },
+    "LangChain": {
+      "file": "langchain.svg",
+      "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/05260484d9f4de68f90cc87a634ae68fa4043efd/packages/static-svg/icons/langchain-color.svg",
+      "library": "Lobe Icons"
+    },
+    "LangGraph": {
+      "file": "langgraph.svg",
+      "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/05260484d9f4de68f90cc87a634ae68fa4043efd/packages/static-svg/icons/langgraph-color.svg",
+      "library": "Lobe Icons"
+    },
+    "Open WebUI": {
+      "file": "openwebui.svg",
+      "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/05260484d9f4de68f90cc87a634ae68fa4043efd/packages/static-svg/icons/openwebui.svg",
+      "library": "Lobe Icons"
+    },
+    "LiteLLM": {
+      "file": "litellm.svg",
+      "source": "https://raw.githubusercontent.com/BerriAI/litellm/13e2d56066199c8165c77e2ae8c7c22eec5e3885/litellm/proxy/_experimental/out/_next/static/media/litellm_monogram.16r2_rdj4dq8r.svg",
+      "library": "LiteLLM"
+    },
+    "Apache IoTDB": {
+      "file": "apache-iotdb.svg",
+      "source": "https://iotdb.apache.org/img/logo.svg",
+      "library": "Apache IoTDB"
+    },
+    "MQTT": {
+      "file": "mqtt.svg",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/801eaab5b70f4933137069397ebbd2ce5f9ad56e/icons/mqtt.svg",
+      "library": "Simple Icons",
+      "color": "660066"
+    },
+    "Nexus": {
+      "file": "sonatype.svg",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/801eaab5b70f4933137069397ebbd2ce5f9ad56e/icons/sonatype.svg",
+      "library": "Simple Icons",
+      "color": "1B1C30"
+    },
+    "SQL": {
+      "file": "sql.svg",
+      "source": "Original repository artwork",
+      "library": "Concept icon"
+    },
+    "PL/SQL": {
+      "file": "plsql.svg",
+      "source": "Original repository artwork",
+      "library": "Concept icon"
+    },
+    "MobileNetV2": {
+      "file": "mobilenetv2.svg",
+      "source": "Original repository artwork",
+      "library": "Concept icon"
+    },
+    "ResNet50": {
+      "file": "resnet50.svg",
+      "source": "Original repository artwork",
+      "library": "Concept icon"
+    },
+    "CNN": {
+      "file": "cnn.svg",
+      "source": "Original repository artwork",
+      "library": "Concept icon"
+    },
+    "AI Agents": {
+      "file": "ai-agents.svg",
+      "source": "Original repository artwork",
+      "library": "Concept icon"
+    },
+    "OpenAI-compatible APIs": {
+      "file": "openai-compatible-apis.svg",
+      "source": "Original repository artwork",
+      "library": "Concept icon"
+    },
+    "CI/CD": {
+      "file": "ci-cd.svg",
+      "source": "Original repository artwork",
+      "library": "Concept icon"
+    }
+  }
+}

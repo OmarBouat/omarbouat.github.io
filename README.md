@@ -41,13 +41,14 @@ The project list includes Student Mental Health Analysis (PDA), based on the sup
 - `src/theme.js`: applies a saved theme before the first paint.
 - `src/main.js`: technology scrolling controls, entrance animations, filters, theme, navigation, galleries, and clipboard.
 - `content/albums.json`: album IDs and photo folders.
+- `content/technology-logos.json`: logo sources, pinned revisions, and concept-icon attribution.
 - `public/`: CV, portrait, photo albums, self-hosted fonts, favicon, and sharing artwork.
 - `scripts/media.mjs`: image discovery, sorting, captions, and manifest generation.
 - `scripts/`: local server and static build.
 - `tests/`: Node test runner and LinkeDOM checks.
 - `.openai/hosting.json`: existing Site identity and static output directory.
 
-The technology strip includes all 45 languages, frameworks, platforms, and model tools named in the CV. Pause scrolling to view the complete wrapped list. Reduced-motion preferences automatically show that static list and disable entrance animations. Experience cards stay fully expanded and appear before projects.
+The technology strip includes all 45 languages, frameworks, platforms, and model tools named in the CV as locally hosted SVG logos or concept icons. Hover, focus, or tap a logo to reveal its name. Pause scrolling to view the complete wrapped list. Reduced-motion preferences automatically show that static list and disable entrance animations. Experience cards stay fully expanded and appear before projects.
 
 ## Editing and validation
 
@@ -60,3 +61,5 @@ Run `npm test`, `npm run build`, and `git diff --check` before deployment. The t
 ## Attribution
 
 The initial version imported [DevFolio](https://github.com/AnilSeervi/DevFolio) by Anil Seervi at commit `650cbbef5c5e132321ef51e7b8626d98f11276ad`. Its MIT license remains in `LICENSE`. The current design and galleries use custom HTML, CSS, and JavaScript inspired by the references above; the unused template stylesheet has been removed. DM Sans and Space Grotesk are self-hosted under the SIL Open Font License; their license files are in `public/fonts/`.
+
+Technology marks come from [Devicon](https://github.com/devicons/devicon), [Lobe Icons](https://github.com/lobehub/lobe-icons), [Simple Icons](https://github.com/simple-icons/simple-icons), [LiteLLM](https://github.com/BerriAI/litellm), and the [Apache IoTDB website](https://iotdb.apache.org/). Their licenses are retained in `public/licenses/`; source URLs are recorded in `content/technology-logos.json`. The SQL, PL/SQL, model architecture, AI agent, API, and CI/CD symbols are original concept illustrations. GPT uses the OpenAI mark and Nexus uses the Sonatype mark. Brand marks identify technologies and do not imply endorsement.
