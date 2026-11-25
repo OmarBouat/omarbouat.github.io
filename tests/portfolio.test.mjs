@@ -59,9 +59,10 @@ test('all internal links, local assets, and SVG references resolve without place
     assert.ok(url && url !== '#', 'No placeholder links');
     if (url.startsWith('#')) assert.ok(document.getElementById(url.slice(1)), url);
     else if (url.startsWith('/')) {
+      const pathname = decodeURIComponent(new URL(url, 'http://localhost').pathname);
       let exists = false;
       for (const base of ['src', 'public']) {
-        try { await access(path.join(root, base, url)); exists = true; } catch {}
+        try { await access(path.join(root, base, pathname)); exists = true; } catch {}
       }
       assert.ok(exists, url);
     }
@@ -318,7 +319,7 @@ test('HTTP serves the portrait, photo manifest, CV, and assets, and rejects priv
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const origin = 'http://127.0.0.1:' + server.address().port;
   try {
-    for (const [route, type] of [['/', 'text/html'], ['/main.js', 'text/javascript'], ['/theme.js', 'text/javascript'], ['/css/portfolio.css', 'text/css'], ['/fonts/dm-sans.woff2', 'font/woff2'], ['/images/profile/portrait.png', 'image/png'], ['/media.json', 'application/json'], ['/Omar_Bouattour.pdf', 'application/pdf']]) {
+    for (const [route, type] of [['/', 'text/html'], ['/main.js', 'text/javascript'], ['/main.js?v=single-row-1', 'text/javascript'], ['/theme.js', 'text/javascript'], ['/css/portfolio.css', 'text/css'], ['/css/portfolio.css?v=single-row-1', 'text/css'], ['/fonts/dm-sans.woff2', 'font/woff2'], ['/images/profile/portrait.png', 'image/png'], ['/media.json', 'application/json'], ['/Omar_Bouattour.pdf', 'application/pdf']]) {
       const response = await fetch(origin + route);
       assert.equal(response.status, 200, route);
       assert.ok(response.headers.get('content-type').startsWith(type), route);

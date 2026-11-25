@@ -56,7 +56,7 @@ Update visible summaries in `src/index.html` and detailed descriptions in `src/m
 
 `public/` contains only assets used by the website. Keep original slide decks and unused uploads outside the repository. `node_modules/` and `dist/` are generated locally and ignored by Git; recreate them with `npm ci` and `npm run build`.
 
-Run `npm test`, `npm run build`, and `git diff --check` before deployment. The test suite checks DOM behavior and server responses; browser verification is still needed for visual layout, native dialog behavior, and actual mobile rendering.
+Run `npm test`, `npm run build`, and `git diff --check` before deployment. When changing CSS or `main.js`, update their `?v=` asset versions in `src/index.html` so returning visitors receive the new files from GitHub Pages. The test suite checks DOM behavior and server responses; browser verification is still needed for visual layout, native dialog behavior, and actual mobile rendering.
 
 ## Attribution
 
