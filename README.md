@@ -36,7 +36,7 @@ The project list includes Student Mental Health Analysis (PDA), based on the sup
 
 ## Structure
 
-- `src/index.html`: hero, CV technology rows, about, experience, projects, hackathons, education, and contact.
+- `src/index.html`: hero, CV technology bar, about, experience, projects, hackathons, education, and contact.
 - `src/css/portfolio.css`: responsive layout and light/dark theme variables.
 - `src/theme.js`: applies a saved theme before the first paint.
 - `src/main.js`: technology scrolling controls, entrance animations, filters, theme, navigation, galleries, and clipboard.
@@ -48,7 +48,7 @@ The project list includes Student Mental Health Analysis (PDA), based on the sup
 - `tests/`: Node test runner and LinkeDOM checks.
 - `.openai/hosting.json`: existing Site identity and static output directory.
 
-The technology strip includes all 45 languages, frameworks, platforms, and model tools named in the CV as locally hosted SVG logos or concept icons. Hover, focus, or tap a logo to reveal its name. Pause scrolling to view the complete wrapped list. Reduced-motion preferences automatically show that static list and disable entrance animations. Experience cards stay fully expanded and appear before projects.
+The technology strip includes all 45 languages, frameworks, platforms, and model tools named in the CV as locally hosted SVG logos or concept icons. Hover, focus, or tap a logo to reveal its name. All 45 logos share one borderless row. Pause scrolling to browse the row manually; reduced-motion preferences also disable automatic scrolling and entrance animations. Monochrome marks adapt to dark mode. Experience cards stay fully expanded and appear before projects.
 
 ## Editing and validation
 

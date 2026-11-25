@@ -30,7 +30,7 @@ themeToggle.addEventListener('click', () => {
 });
 updateThemeButton();
 
-const technologyRows = document.querySelector('.technology-rows');
+const technologyMarquee = document.querySelector('.technology-marquee');
 const motionToggle = document.querySelector('.motion-toggle');
 const motionPreference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
 let scrollingPaused = false;
@@ -47,7 +47,9 @@ document.querySelectorAll('.technology-track').forEach(track => {
 });
 function updateScrolling() {
   const reducedMotion = motionPreference?.matches === true;
-  technologyRows.classList.toggle('is-running', !scrollingPaused && !reducedMotion);
+  const running = !scrollingPaused && !reducedMotion;
+  if (running) technologyMarquee.querySelector('.technology-viewport').scrollLeft = 0;
+  technologyMarquee.classList.toggle('is-running', running);
   motionToggle.hidden = reducedMotion;
   motionToggle.setAttribute('aria-pressed', String(scrollingPaused));
   motionToggle.textContent = scrollingPaused ? 'Resume scrolling' : 'Pause scrolling';
