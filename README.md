@@ -32,7 +32,9 @@ The current portrait and event photographs were supplied by Omar. The portrait l
 
 The development server refreshes the photo manifest on page reload. Build and redeploy after changing photos on the hosted site.
 
-The project list includes Student Mental Health Analysis (PDA), based on the supplied presentation and verified [analysis notebooks](https://github.com/OmarBouat/Project-Data-Analysis). Every project starts with an approved illustrated cover. The PDA and vegetable-classification galleries each retain five curated screenshots after the cover; crop recommendation retains three covering its objective, model evaluation, and web application. See the photo guide for selected slide numbers.
+The project list includes Student Mental Health Analysis (PDA), based on the supplied presentation and verified [analysis notebooks](https://github.com/OmarBouat/Project-Data-Analysis). The original five projects start with approved illustrated covers; the Big Data project uses its supplied presentation cover. The PDA and vegetable-classification galleries each retain five curated screenshots after the cover; crop recommendation retains three covering its objective, model evaluation, and web application. See the photo guide for selected slide numbers.
+
+The sixth project, **Hadoop HA & Big Data Platform**, links to [its public repository](https://github.com/OmarBouat/big-data-ha-cluster). Its six-image gallery covers the supplied project presentation, four-VM service placement, HDFS/YARN design, Spark workloads, recorded Router failover, and the Hive crime-analysis summary. Details also describe HBase failover validation. The project is presented as a single-host lab; no uptime or recovery-time benchmark is claimed.
 
 ## Structure
 

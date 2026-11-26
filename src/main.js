@@ -80,6 +80,20 @@ document.querySelectorAll('[data-filter]').forEach(button => {
 });
 
 const items = {
+  'big-data': {
+    category: 'DATA ENGINEERING · HIGH-AVAILABILITY LAB',
+    title: 'Hadoop HA & Big Data Platform',
+    description: 'A reproducible, single-host lab with four virtual machines for Hadoop high availability, SQL analytics, and distributed PySpark workloads.',
+    details: [
+      'Automated a four-VM VirtualBox environment with Vagrant, Ansible, and Make, including dual HDFS NameNodes and YARN ResourceManagers with ZooKeeper-coordinated failover.',
+      'Configured Hive services with a MySQL InnoDB Cluster and local Routers; documented automatic primary failover, writable Router endpoints, and full database-outage recovery.',
+      'Deployed HBase with two HMasters and two RegionServers on HA HDFS, and documented master promotion with a successful read after failover.',
+      'Ran Spark on YARN, including SparkPi, request-log aggregation, and distributed matrix multiplication using PySpark joins and reduceByKey.',
+      'Analyzed 1,004,894 LAPD crime reports through Hive over HDFS and cross-checked the aggregate distributions against the source CSV snapshot.'
+    ],
+    tags: ['Hadoop', 'Spark', 'Hive', 'HBase', 'ZooKeeper', 'MySQL', 'Vagrant', 'Ansible'],
+    repository: 'https://github.com/OmarBouat/big-data-ha-cluster'
+  },
   pda: {
   "category": "DATA ANALYSIS · HEALTHY MINDS STUDY",
   "title": "Student Mental Health Analysis",

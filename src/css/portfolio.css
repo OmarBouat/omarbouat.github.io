@@ -217,6 +217,7 @@ dialog::backdrop{background:#161323b8;backdrop-filter:blur(7px)}
 .dialog-close{position:absolute;right:14px;top:14px;z-index:3;background:var(--surface);box-shadow:0 2px 8px #00000008}
 .dialog-close .icon{height:18px;width:18px}
 .dialog-layout{display:grid;grid-template-columns:1.15fr 1fr;align-items:start}
+.dialog-gallery,.dialog-content{min-width:0}
 dialog.no-photos{max-width:650px}
 dialog.no-photos .dialog-layout{grid-template-columns:1fr}
 .dialog-content{padding:60px 32px 32px}
@@ -260,10 +261,7 @@ dialog.no-photos .dialog-layout{grid-template-columns:1fr}
 .project-cover:hover>img{transform:none}
 .gallery-original{display:block;width:max-content;margin:8px auto 0;color:var(--accent);font-size:11px;line-height:1.8;text-decoration:underline;text-underline-offset:4px}
 
-/* A wider data-analysis card completes the five-project collection. */
-.project-card-wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
-.project-card-wide>.project-cover{height:320px}
-.project-card-wide>.project-body{min-width:0}
+/* Data-analysis fallback illustration. */
 .pda-cover{background:#e6eaf8;color:#6073a2}
 .pda-art{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:40px;font-family:var(--mono);font-size:10px}
 .pda-art>.icon{width:30px;height:30px;margin-right:8px}
@@ -271,8 +269,8 @@ dialog.no-photos .dialog-layout{grid-template-columns:1fr}
 .pda-art>i{font-style:normal;opacity:.5}
 [data-theme="dark"] .pda-cover{background:#28324c;color:#b1bfed}
 [data-theme="dark"] .pda-art>span{background:#303e5a;border-color:#52648b}
-@media(max-width:850px){.project-card-wide>.project-cover{height:310px}.pda-art{gap:7px;font-size:8px}.pda-art>.icon{margin-right:0;width:23px}.pda-art>span{padding:6px 7px}}
-@media(max-width:650px){.project-card-wide{grid-template-columns:1fr}.project-card-wide>.project-cover{height:235px}.pda-art{gap:10px;font-size:9px}.pda-art>.icon{width:27px;margin-right:4px}}
+@media(max-width:850px){.pda-art{gap:7px;font-size:8px}.pda-art>.icon{margin-right:0;width:23px}.pda-art>span{padding:6px 7px}}
+@media(max-width:650px){.pda-art{gap:10px;font-size:9px}.pda-art>.icon{width:27px;margin-right:4px}}
 
 /* Six event stories use a balanced desktop grid and complete photo covers. */
 .moment-card{display:flex;flex-direction:column}

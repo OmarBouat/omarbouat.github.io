@@ -42,5 +42,9 @@
   "techresolve": {
     "folder": "hackathons/techresolve-2",
     "title": "TechResolve Challenge 2.0"
+  },
+  "big-data": {
+    "folder": "projects/big-data",
+    "title": "Hadoop HA & Big Data Platform"
   }
 }

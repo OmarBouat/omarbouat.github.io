@@ -73,7 +73,7 @@ test('all internal links, local assets, and SVG references resolve without place
   const css = await readFile(path.join(root, 'src/css/portfolio.css'), 'utf8');
   for (const [, url] of css.matchAll(/url\(["']?(\/[^"')]+)["']?\)/g)) await access(path.join(root, 'public', url));
   assert.equal(document.querySelectorAll('h1').length, 1);
-  assert.equal(document.querySelectorAll('.project-card').length, 5);
+  assert.equal(document.querySelectorAll('.project-card').length, 6);
   assert.equal(document.querySelectorAll('.moment-card').length, 6);
   assert.doesNotMatch(html, /googletagmanager|Lorem ipsum|Your Name|UA-122228201/);
 });
@@ -89,11 +89,11 @@ test('project filters change visible projects, count, and pressed states', () =>
   click('[data-filter="infrastructure"]');
   assert.ok(visible().every(card => card.dataset.category === 'infrastructure'));
   click('[data-filter="data"]');
-  assert.equal(visible().length, 1);
-  assert.equal(visible()[0].dataset.albumCard, 'pda');
-  assert.equal(document.querySelector('.project-count').textContent, '1 project');
+  assert.equal(visible().length, 2);
+  assert.deepEqual(visible().map(card => card.dataset.albumCard), ['big-data', 'pda']);
+  assert.equal(document.querySelector('.project-count').textContent, '2 projects');
   click('[data-filter="all"]');
-  assert.equal(visible().length, 5);
+  assert.equal(visible().length, 6);
 });
 
 test('CV technologies scroll accessibly, can all be viewed when paused, and follow motion preferences', () => {
@@ -205,6 +205,7 @@ test('all project and event buttons open details, tolerate empty albums, and res
     const repository = document.querySelector('#dialog-links a[target="_blank"]');
     if (trigger.dataset.open === 'kubernetes') assert.equal(repository.href, 'https://github.com/OmarBouat/K8S_IaC');
     else if (trigger.dataset.open === 'pda') assert.equal(repository.href, 'https://github.com/OmarBouat/Project-Data-Analysis');
+    else if (trigger.dataset.open === 'big-data') assert.equal(repository.href, 'https://github.com/OmarBouat/big-data-ha-cluster');
     else assert.equal(repository, null);
     click('.dialog-close');
     assert.equal(dialog.hasAttribute('open'), false);
@@ -319,7 +320,7 @@ test('HTTP serves the portrait, photo manifest, CV, and assets, and rejects priv
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const origin = 'http://127.0.0.1:' + server.address().port;
   try {
-    for (const [route, type] of [['/', 'text/html'], ['/main.js', 'text/javascript'], ['/main.js?v=single-row-1', 'text/javascript'], ['/theme.js', 'text/javascript'], ['/css/portfolio.css', 'text/css'], ['/css/portfolio.css?v=single-row-1', 'text/css'], ['/fonts/dm-sans.woff2', 'font/woff2'], ['/images/profile/portrait.png', 'image/png'], ['/media.json', 'application/json'], ['/Omar_Bouattour.pdf', 'application/pdf']]) {
+    for (const [route, type] of [['/', 'text/html'], ['/main.js', 'text/javascript'], ['/main.js?v=big-data-20261126', 'text/javascript'], ['/theme.js', 'text/javascript'], ['/css/portfolio.css', 'text/css'], ['/css/portfolio.css?v=big-data-20261126', 'text/css'], ['/fonts/dm-sans.woff2', 'font/woff2'], ['/images/profile/portrait.png', 'image/png'], ['/media.json', 'application/json'], ['/Omar_Bouattour.pdf', 'application/pdf']]) {
       const response = await fetch(origin + route);
       assert.equal(response.status, 200, route);
       assert.ok(response.headers.get('content-type').startsWith(type), route);
@@ -372,6 +373,37 @@ test('approved project covers appear first and retain all selected screenshots i
     assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / ' + count);
     app.click('.dialog-close');
   }
+});
+
+test('the Big Data project filters correctly and opens its six selected images and source repository', async () => {
+  const media = await buildMedia(root);
+  const photos = media.albums['big-data'];
+  assert.deepEqual(photos.map(photo => path.basename(photo.src)), ['00-cover.png', '01-service-placement.png', '02-hdfs-yarn-availability.png', '03-spark-workloads.png', '04-recorded-router-failover.png', '05-hive-crime-summary.png']);
+  for (const photo of photos) {
+    await access(path.join(root, 'public', photo.src));
+    assert.ok(photo.caption.length > 30);
+  }
+  const app = setup({ media });
+  await flush();
+  app.click('[data-filter="data"]');
+  const card = app.document.querySelector('[data-album-card="big-data"]');
+  assert.equal(card.hidden, false);
+  assert.equal(card.querySelector('[data-photo-count]').textContent, '6 photos');
+  assert.equal(card.querySelector('[data-cover-image]').getAttribute('src'), photos[0].src);
+  app.click(card.querySelector('[data-open]'));
+  assert.equal(app.document.querySelector('#dialog-title').textContent, 'Hadoop HA & Big Data Platform');
+  assert.match(app.document.querySelector('#dialog-description').textContent, /single-host/);
+  assert.match(app.document.querySelector('#dialog-details').textContent, /1,004,894/);
+  assert.match(app.document.querySelector('#dialog-details').textContent, /HBase/);
+  assert.equal(app.document.querySelector('#dialog-links a[target="_blank"]').getAttribute('href'), 'https://github.com/OmarBouat/big-data-ha-cluster');
+  assert.equal(app.document.querySelector('#gallery-image').getAttribute('src'), photos[0].src);
+  assert.equal(app.document.querySelectorAll('.gallery-thumbnail').length, 6);
+  for (let index = 1; index < photos.length; index++) app.click('.gallery-next');
+  assert.equal(app.document.querySelector('#gallery-counter').textContent, '6 / 6');
+  assert.equal(app.document.querySelector('#gallery-original').getAttribute('href'), photos[5].src);
+  app.click('.gallery-next');
+  assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / 6');
+  app.click('.dialog-close');
 });
 
 test('new event albums and the expanded CPC story load their matching images', async () => {

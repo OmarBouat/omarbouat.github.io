@@ -17,6 +17,7 @@ Create the relevant folder and add your photos:
 | Vegetable classification | `projects/vision/` |
 | Crop recommendation | `projects/crop/` |
 | Student mental health analysis (PDA) | `projects/student-mental-health/` |
+| Hadoop HA & Big Data Platform | `projects/big-data/` |
 | Technova 1.0 | `hackathons/technova/` |
 | Fit-Tech 1.0 | `hackathons/fit-tech/` |
 | MasterFaster 2.0 | `hackathons/masterfaster/` |
@@ -60,7 +61,7 @@ New album folder definitions live in `content/albums.json`; add matching card an
 
 ## Curated project galleries
 
-Each project begins with its approved `00-cover.png` illustration. Keep that file first; it supplies the card thumbnail and first gallery image. The PDA and vegetable-classification galleries each also publish five selected screenshots (six images including the cover). Only selected images live under `public/images/projects/`. Keep complete slide sets and other source uploads outside the repository.
+The original five projects begin with their approved `00-cover.png` illustrations. The Big Data project uses a rendered presentation cover with the same filename. Keep that file first; it supplies the card thumbnail and first gallery image. The PDA and vegetable-classification galleries each also publish five selected screenshots (six images including the cover). Only selected images live under `public/images/projects/`. Keep complete slide sets and other source uploads outside the repository.
 
 - **Student Mental Health Analysis:** source slides **7, 18, 25, 30, 36**. They show the survey cohort, PCA explained variance, correspondence analysis, K-means projection, and balanced model evaluation.
 - **Vegetable Image Classification:** source slides **1, 3, 9, 11, 15**. They show the overview, model approaches, test results, prediction examples, and accuracy-versus-efficiency trade-offs.
@@ -70,3 +71,7 @@ The PDA album folder is `public/images/projects/student-mental-health/`. Retain 
 ### Crop recommendation selection
 
 The crop-recommendation gallery publishes **three screenshots plus its illustrated cover**. The screenshots come from source slides **3, 13, and 15**, showing the prediction objective, tuned model comparisons, and the web application. They are stored under `public/images/projects/crop/`. Keep three selected screenshots plus `00-cover.png` in this gallery.
+
+### Big Data project selection
+
+The six images in `public/images/projects/big-data/` use the supplied project material: presentation slides **1, 4, 5, and 10**, followed by the recorded Router-failover validation and Hive crime-analysis summary. `00-cover.png` is the presentation title slide. Captions distinguish recorded validation output from the architecture slides. Original reports, source code, credentials, VM files, and the large CSV stay outside this portfolio repository.
