@@ -375,10 +375,12 @@ test('approved project covers appear first and retain all selected screenshots i
   }
 });
 
-test('the Big Data project filters correctly and opens its six selected images and source repository', async () => {
+test('the Big Data project filters correctly and opens its approved thumbnail, architecture, and source repository', async () => {
   const media = await buildMedia(root);
   const photos = media.albums['big-data'];
-  assert.deepEqual(photos.map(photo => path.basename(photo.src)), ['00-cover.png', '01-service-placement.png', '02-hdfs-yarn-availability.png', '03-spark-workloads.png', '04-recorded-router-failover.png', '05-hive-crime-summary.png']);
+  assert.deepEqual(photos.map(photo => path.basename(photo.src)), ['00-thumbnail.png', '01-architecture.png']);
+  assert.match(photos[0].caption, /^Illustrated cover:/);
+  assert.match(photos[1].caption, /^Architecture illustration:/);
   for (const photo of photos) {
     await access(path.join(root, 'public', photo.src));
     assert.ok(photo.caption.length > 30);
@@ -388,7 +390,7 @@ test('the Big Data project filters correctly and opens its six selected images a
   app.click('[data-filter="data"]');
   const card = app.document.querySelector('[data-album-card="big-data"]');
   assert.equal(card.hidden, false);
-  assert.equal(card.querySelector('[data-photo-count]').textContent, '6 photos');
+  assert.equal(card.querySelector('[data-photo-count]').textContent, '2 photos');
   assert.equal(card.querySelector('[data-cover-image]').getAttribute('src'), photos[0].src);
   app.click(card.querySelector('[data-open]'));
   assert.equal(app.document.querySelector('#dialog-title').textContent, 'Hadoop HA & Big Data Platform');
@@ -397,12 +399,12 @@ test('the Big Data project filters correctly and opens its six selected images a
   assert.match(app.document.querySelector('#dialog-details').textContent, /HBase/);
   assert.equal(app.document.querySelector('#dialog-links a[target="_blank"]').getAttribute('href'), 'https://github.com/OmarBouat/big-data-ha-cluster');
   assert.equal(app.document.querySelector('#gallery-image').getAttribute('src'), photos[0].src);
-  assert.equal(app.document.querySelectorAll('.gallery-thumbnail').length, 6);
+  assert.equal(app.document.querySelectorAll('.gallery-thumbnail').length, 2);
   for (let index = 1; index < photos.length; index++) app.click('.gallery-next');
-  assert.equal(app.document.querySelector('#gallery-counter').textContent, '6 / 6');
-  assert.equal(app.document.querySelector('#gallery-original').getAttribute('href'), photos[5].src);
+  assert.equal(app.document.querySelector('#gallery-counter').textContent, '2 / 2');
+  assert.equal(app.document.querySelector('#gallery-original').getAttribute('href'), photos[1].src);
   app.click('.gallery-next');
-  assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / 6');
+  assert.equal(app.document.querySelector('#gallery-counter').textContent, '1 / 2');
   app.click('.dialog-close');
 });
 

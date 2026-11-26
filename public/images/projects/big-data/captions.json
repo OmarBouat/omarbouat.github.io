@@ -1,8 +1,4 @@
 {
-  "00-cover.png": "Project cover: Hadoop high availability with Infrastructure as Code, a reproducible four-VM platform using Vagrant, Ansible, Spark, and Hive.",
-  "01-service-placement.png": "Service placement across two master VMs and two DataNode VMs, including Hadoop, ZooKeeper, JournalNodes, Hive, and MySQL services.",
-  "02-hdfs-yarn-availability.png": "HDFS and YARN availability design: active/standby NameNodes, shared JournalNodes, ZooKeeper failover coordination, and redundant ResourceManagers.",
-  "03-spark-workloads.png": "Spark workloads on YARN: a successful SparkPi run, distributed log aggregation, and a PySpark matrix multiplication example.",
-  "04-recorded-router-failover.png": "Recorded MySQL primary-failover validation from 27 October 2026: both local Routers reached the replacement writable primary after the original primary stopped.",
-  "05-hive-crime-summary.png": "Recorded Hive analysis summary for 1,004,894 LAPD crime reports, including area, crime-description, occurrence-year, and data-quality aggregates."
+  "00-thumbnail.png": "Illustrated cover: two master VMs and two worker VMs connected on one shared lab platform for Hadoop high availability, Spark, and Hive.",
+  "01-architecture.png": "Architecture illustration: a single-host, four-VM Hadoop lab with Spark on YARN, active/standby NameNodes, redundant ResourceManagers, Hive, HBase, a three-node ZooKeeper and JournalNode quorum, and three-member MySQL InnoDB Cluster with local Routers."
 }
