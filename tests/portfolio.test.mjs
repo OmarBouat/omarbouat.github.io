@@ -320,7 +320,7 @@ test('HTTP serves the portrait, photo manifest, CV, and assets, and rejects priv
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const origin = 'http://127.0.0.1:' + server.address().port;
   try {
-    for (const [route, type] of [['/', 'text/html'], ['/main.js', 'text/javascript'], ['/main.js?v=big-data-20261126', 'text/javascript'], ['/theme.js', 'text/javascript'], ['/css/portfolio.css', 'text/css'], ['/css/portfolio.css?v=big-data-20261126', 'text/css'], ['/fonts/dm-sans.woff2', 'font/woff2'], ['/images/profile/portrait.png', 'image/png'], ['/media.json', 'application/json'], ['/Omar_Bouattour.pdf', 'application/pdf']]) {
+    for (const [route, type] of [['/', 'text/html'], ['/main.js', 'text/javascript'], ['/main.js?v=big-data-20261126-2', 'text/javascript'], ['/theme.js', 'text/javascript'], ['/css/portfolio.css', 'text/css'], ['/css/portfolio.css?v=big-data-20261126-2', 'text/css'], ['/fonts/dm-sans.woff2', 'font/woff2'], ['/images/profile/portrait.png', 'image/png'], ['/media.json', 'application/json'], ['/Omar_Bouattour.pdf', 'application/pdf']]) {
       const response = await fetch(origin + route);
       assert.equal(response.status, 200, route);
       assert.ok(response.headers.get('content-type').startsWith(type), route);

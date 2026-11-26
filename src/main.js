@@ -366,7 +366,7 @@ dialog.addEventListener('close', () => {
 function validPhoto(photo) {
   return photo && typeof photo.src === 'string' && photo.src.startsWith('/images/') && typeof photo.alt === 'string';
 }
-fetch('/media.json').then(response => {
+fetch('/media.json', { cache: 'no-cache' }).then(response => {
   if (!response.ok) throw new Error('Photo manifest unavailable');
   return response.json();
 }).then(result => {
